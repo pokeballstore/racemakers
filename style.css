@@ -3,30 +3,31 @@
 /* GENERAL PAGE SETTINGS */
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Makes padding and border included in the element width */
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-bottom: 100px;
+  scroll-behavior: smooth;       /* Makes anchor links scroll smoothly */
+  scroll-padding-bottom: 100px;  /* Prevents fixed bottom nav from covering linked sections */
 }
 
 body {
-  margin: 0;
-  font-family: 'Exo 2', sans-serif;
-  background: #000000;
-  color: #eee;
-  line-height: 1.6;
-  font-size: 22px;
+  margin: 0;                     /* Removes default browser margin */
+  font-family: 'Exo 2', sans-serif; /* Main text font */
+  background: #000000;           /* Black background */
+  color: #eee;                   /* Light text */
+  line-height: 1.6;              /* More readable line spacing */
+  font-size: 22px;               /* Base text size */
 }
 
 
 /* BANNER */
 
 .flames-banner {
-  width: 100%;
-  height: 180px;
-  display: block;
+  width: 100%;                   /* Makes banner fill the page width */
+  height: 180px;                 /* Controls desktop banner height */
+  object-fit: contain;           /* Shows full image without cropping */
+  display: block;                /* Removes small image gap underneath */
 }
 
 
@@ -35,8 +36,8 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
+  font-family: 'Orbitron', sans-serif; /* Futuristic heading font */
+  letter-spacing: 2px;                 /* Adds space between letters */
 }
 
 
@@ -45,84 +46,118 @@ h3 {
 main,
 header,
 footer {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: 900px;              /* Prevents text from becoming too wide */
+  margin: 0 auto;                /* Centers content */
+  padding: 0 24px;               /* Adds side spacing */
 }
 
 .event-section {
-  padding: 50px 0;
+  padding: 50px 0;               /* Space above and below sections */
 }
 
 
 /* NAVIGATION */
 
 nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: fixed;               /* Keeps navigation visible */
+  bottom: 0;                     /* Places nav at bottom */
+  left: 0;                       /* Starts at left edge */
+  width: 100%;                   /* Full width */
 
-  background: #111;
-  padding: 10px;
-  z-index: 1000;
+  background: #111;              /* Dark nav background */
+  padding: 10px;                 /* Space inside nav */
+  z-index: 1000;                 /* Keeps nav above other content */
 }
 
 nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
+  display: flex;                 /* Places menu items in a row */
+  flex-wrap: wrap;               /* Allows items to wrap on small screens */
+  gap: 12px;                     /* Space between links */
+  list-style: none;              /* Removes bullet points */
+  padding: 0;                    /* Removes default list padding */
+  margin: 0;                     /* Removes default list margin */
+  justify-content: center;       /* Centers menu items */
 }
 
 nav a {
-  display: inline-block;
-  text-decoration: none;
-  color: gold;
-  padding: 12px 20px;
-  background: #333;
+  display: inline-block;         /* Allows padding like a button */
+  text-decoration: none;         /* Removes underline */
+  color: gold;                   /* Link text color */
+  padding: 12px 20px;            /* Button spacing */
+  background: #333;              /* Button background */
 }
 
 nav a:hover {
-  background: #555;
+  background: #555;              /* Hover effect */
 }
 
 
 /* RULES */
 
 .rules-box {
-  background: #111;
-  padding: 24px;
-  border-left: 4px solid gold;
+  background: #111;              /* Slightly lighter black box */
+  padding: 24px;                 /* Space inside rules box */
+  border-left: 4px solid gold;   /* Gold accent line */
+}
+
+
+/* FORMS */
+
+.hidden {
+  display: none;                 /* Hides Netlify anti-spam field */
+}
+
+.signup-form input,
+.signup-form textarea,
+.signup-form button {
+  width: 100%;                   /* Makes form controls fill available width */
+  padding: 12px;                 /* Space inside inputs */
+  font: inherit;                 /* Uses same font as the rest of the site */
+}
+
+.form-field {
+  margin-bottom: 20px;           /* Space between form fields */
+}
+
+.signup-form textarea {
+  resize: vertical;              /* User can resize textarea only up/down */
+}
+
+.signup-form button {
+  background: #333;              /* Button background */
+  color: gold;                   /* Button text */
+  border: none;                  /* Removes default border */
+  cursor: pointer;               /* Shows clickable hand cursor */
+}
+
+.signup-form button:hover {
+  background: #555;              /* Button hover effect */
 }
 
 
 /* BUTTONS */
 
 .map-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #333;
-  color: gold;
-  text-decoration: none;
+  display: inline-block;         /* Makes link behave like a button */
+  padding: 12px 24px;            /* Button spacing */
+  background: #333;              /* Button background */
+  color: gold;                   /* Button text */
+  text-decoration: none;         /* Removes underline */
 }
 
 .map-button:hover {
-  background: #555;
+  background: #555;              /* Hover effect */
 }
 
 
 /* FOOTER */
 
 footer {
-  padding-bottom: 140px;
+  padding-bottom: 140px;         /* Keeps footer above fixed nav */
 }
 
 footer a {
-  color: gold;
+  color: gold;                   /* Footer links match theme */
 }
 
 
@@ -130,15 +165,19 @@ footer a {
 
 @media (max-width: 600px) {
   body {
-    font-size: 18px;
+    font-size: 18px;             /* Smaller text on phones */
+  }
+
+  .flames-banner {
+    height: auto;                /* Keeps full banner image on phones */
   }
 
   nav a {
-    padding: 10px 14px;
-    font-size: 16px;
+    padding: 10px 14px;          /* Smaller nav buttons on phones */
+    font-size: 16px;             /* Smaller nav text */
   }
 
   .event-section {
-    padding: 32px 0;
+    padding: 32px 0;             /* Less section spacing on phones */
   }
 }

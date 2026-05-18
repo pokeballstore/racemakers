@@ -1,90 +1,233 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-    <head>
-        <title>Signup</title>
-         <meta name="color-scheme" content="dark"> <!-- Is this correct place for the darkmode? -->
-         <link rel="stylesheet" href="style.css"> <!-- Tells the browser that there is a CSS sheet-->
-          <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo 2:wght@300;400;500&display=swap" rel="stylesheet">
-    </head>
+<head>
+
+  <!-- Information about the webpage -->
+  <meta charset="UTF-8">
+
+  <!-- Helps browsers understand the page uses dark mode -->
+  <meta name="color-scheme" content="dark">
+
+  <!-- Text shown in the browser tab -->
+  <title>Signup</title>
+
+  <!-- Connect HTML to CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
 <body>
-    
-    <header>
-      <h1>Signup page</h1>
-    </header>
-        
-<main>
-    <section>
-        <h2>Sign up</h2>
 
-        <form class="signup-form" id="signup-form"> <!-- Container for the user to enter data. the id is for the javascript -->
+  <!-- HEADER -->
+  <header>
 
-          <div class="form-field"> <!-- with the same div class it will be easy to edit all of them at the same time and keep a good structure-->
-           <label for="name">Name:</label><br> <!-- The label is to tell the browser they are connected <br> is line break-->
-           <input type="text" id="name" name="name"> <!-- Browser will now what to expect from the input-->
-          </div>
+    <h1>Signup Page</h1>
+
+    <p>
+      Register for the next Racemakers event.
+    </p>
+
+  </header>
 
 
-         <div class="form-field"> <!-- with the same div class it will be easy to edit all of them at the same time and keep a good structure-->
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email"> <!-- Browser will now what to expect from the input-->
-</div>
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- SIGNUP SECTION -->
+    <section class="event-section">
+
+      <h2>Sign up</h2>
+
+      <!-- 
+      NETLIFY FORM
+
+      method="POST"
+      Sends the form data.
+
+      data-netlify="true"
+      Tells Netlify to collect submissions automatically.
+
+      name="signup"
+      The form name shown inside Netlify dashboard.
+      -->
+
+      <form
+        name="signup"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="signup-form"
+      >
+
+        <!-- Hidden form name required by Netlify -->
+        <input type="hidden" name="form-name" value="signup">
 
 
-        <div class="form-field"> <!-- with the same div class it will be easy to edit all of them at the same time and keep a good structure-->
-             <label for="message">Message:</label><br>
-             <textarea id="message" name="message"></textarea> <!-- Multi-line answer box-->
+        <!-- Hidden anti-spam field -->
+        <p class="hidden">
+
+          <label>
+            Do not fill this out:
+            <input name="bot-field">
+          </label>
+
+        </p>
+
+
+        <!-- NAME -->
+        <div class="form-field">
+
+          <label for="name">
+            Name:
+          </label><br>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+          >
+
         </div>
 
-<div class="form-actions">
-  <button type="submit">Submit</button> <!-- Just a structure for now, backend will be implemented-->
-</div>
-        </form>
+
+        <!-- EMAIL -->
+        <div class="form-field">
+
+          <label for="email">
+            Email:
+          </label><br>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+        <div class="form-field">
+
+          <label for="message">
+            Message:
+          </label><br>
+
+          <!-- Multi-line text box -->
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+          ></textarea>
+
+        </div>
+
+
+        <!-- GDPR / PRIVACY CONSENT -->
+        <div class="form-field">
+
+          <label>
+
+            <!-- required means the form cannot be submitted unless checked -->
+            <input
+              type="checkbox"
+              name="gdpr-consent"
+              required
+            >
+
+            I agree that Racemakers may store my submitted information
+            to manage the event registration.
+
+          </label>
+
+        </div>
+
+
+        <!-- SUBMIT BUTTON -->
+        <div class="form-actions">
+
+          <button type="submit">
+            Submit
+          </button>
+
+        </div>
+
+      </form>
+
     </section>
 
-    
-        
-        <nav>
-           <ul>
-                 
-               <li><a href="index.html#about">About</a></li> <!-- Changed so href is linking to the correct document -->
-                 <li><a href="index.html#rules">Rules</a></li> <!-- Otherwise it is searching inisde this document for "Rules" -->
-                 <li><a href="index.html#location">Location</a></li>                                          
-                 <li><a href="signup.html">Sign up here</a></li> 
-                 <li><a href="participants.html">Participants</a></li>
-                 <li><a href="index.html">Home</a></li>
-           </ul>
 
-        </nav>
-    
- <footer>
-    <p>Let se goo Mario</p>
- </footer>
+    <!-- PRIVACY SECTION -->
+    <section class="event-section">
 
-<script> //AI genereated code
-const form = document.getElementById("signup-form");
+      <h2>Privacy</h2>
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
+      <p>
+        The information you submit is only used to manage this event registration.
+      </p>
 
-  const name = document.getElementById("name").value;
+      <p>
+        We do not sell or share your information with third parties.
+      </p>
 
+      <p>
+        If you want your submitted information removed,
+        contact us at:
+      </p>
 
-  let participants = JSON.parse(localStorage.getItem("participants")) || [];
+      <p>
 
+        <a href="mailto:racemakers@modul.slmail.me">
+          racemakers@modul.slmail.me
+        </a>
 
-  participants.push(name);
+      </p>
 
-  localStorage.setItem("participants", JSON.stringify(participants));
+    </section>
 
-  console.log("Saved list:", participants);
+  </main>
 
 
-  setTimeout(function() {
-  window.location.href = "participants.html";
-}, 100); // maybe this will fix bug nr 7
-});
-</script>
+  <!-- NAVIGATION -->
+  <nav>
+
+    <ul>
+
+      <!-- Links to sections inside index.html -->
+
+      <li><a href="index.html#about">About</a></li>
+
+      <li><a href="index.html#rules">Rules</a></li>
+
+      <li><a href="index.html#location">Location</a></li>
+
+      <li><a href="signup.html">Sign up here</a></li>
+
+      <li><a href="participants.html">Participants</a></li>
+
+      <li><a href="index.html">Home</a></li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      See you at the race!
+    </p>
+
+  </footer>
 
 </body>
+
 </html>
