@@ -1,108 +1,122 @@
 <!DOCTYPE html>
+<html lang="sv">
 
-          <label for="message">
-            Meddelande:
-          </label>
+<head>
 
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-          ></textarea>
+  <!-- Grundläggande sidinformation -->
+  <meta charset="UTF-8">
 
-        </div>
+  <!-- Stöd för mörkt läge -->
+  <meta name="color-scheme" content="dark">
 
+  <!-- Mobilanpassning -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- OFFENTLIGT NAMN -->
-        <div class="form-field">
+  <!-- Titel i webbläsarfliken -->
+  <title>Anmälan lyckades | Racemakers</title>
 
-          <label for="public-name">
-            Offentligt deltagarnamn:
-          </label>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-          <input
-            type="text"
-            id="public-name"
-            name="public-name"
-            placeholder="Riktigt namn eller smeknamn"
-            required
-          >
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
 
-          <small>
-            Detta namn kan visas offentligt på deltagarsidan.
-          </small>
+</head>
 
-        </div>
+<body>
 
-
-        <!-- GDPR -->
-        <div class="form-field">
-
-          <label>
-
-            <input
-              type="checkbox"
-              name="gdpr-consent"
-              required
-            >
-
-            Jag godkänner att Racemakers lagrar min information
-            för att hantera eventanmälan.
-
-          </label>
-
-        </div>
+  <!-- Toppbanner -->
+  <img
+    class="flames-banner"
+    src="banner.webp"
+    alt="Racemakers eld-banner"
+  >
 
 
-        <!-- ANSVARSFRISKRIVNING -->
-        <div class="form-field">
+  <!-- HEADER -->
+  <header id="top">
 
-          <label>
+    <h1>Anmälan lyckades</h1>
 
-            <input
-              type="checkbox"
-              name="liability-waiver"
-              required
-            >
+    <p>
+      Din anmälan har tagits emot.
+    </p>
 
-            Jag förstår att deltagande sker på egen risk.
-            Racemakers och arrangörerna ansvarar inte för
-            skador, olyckor eller förlust under eventet.
-
-          </label>
-
-        </div>
+  </header>
 
 
-        <!-- KNAPP -->
-        <div class="form-actions">
+  <!-- HUVUDINNEHÅLL -->
+  <main>
 
-          <button type="submit">
-            Skicka anmälan
-          </button>
+    <!-- BEKRÄFTELSEMEDDELANDE -->
+    <section class="event-section">
 
-        </div>
+      <div class="rules-box">
 
-      </form>
+        <h2>Tack!</h2>
+
+        <p>
+          Tack för att du anmälde dig till Racemakers-evenemanget.
+        </p>
+
+        <p>
+          Din anmälan har skickats in framgångsrikt.
+        </p>
+
+        <p>
+          Vi ser fram emot att träffa dig på tävlingen.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- SNABBLÄNKAR -->
+    <section class="event-section">
+
+      <h2>Fortsätt</h2>
+
+      <p>
+        <a href="index-sv.html" class="map-button">
+          Tillbaka till startsidan
+        </a>
+      </p>
+
+      <p>
+        <a href="participants-sv.html" class="map-button">
+          Visa deltagare
+        </a>
+      </p>
 
     </section>
 
   </main>
 
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <nav>
 
     <ul>
 
       <li><a href="index-sv.html#about">Om</a></li>
-      <li><a href="index-sv.html#course">Bana</a></li>
+
+      <li><a href="index-sv.html#course">Banan</a></li>
+
       <li><a href="index-sv.html#rules">Regler</a></li>
+
       <li><a href="index-sv.html#location">Plats</a></li>
+
       <li><a href="signup-sv.html">Anmälan</a></li>
+
       <li><a href="participants-sv.html">Deltagare</a></li>
+
       <li><a href="racemakers-sv.html">Racemakers</a></li>
-      <li><a href="index.html">🇬🇧 English</a></li>
+
+      <li><a href="signup-success.html">🇬🇧 English</a></li>
 
     </ul>
 
@@ -118,6 +132,10 @@
         racemakers@modul.slmail.me
       </a>
     </address>
+
+    <p>
+      Racemakers Community Project
+    </p>
 
   </footer>
 
