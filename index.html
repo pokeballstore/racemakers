@@ -1,121 +1,119 @@
-<!-- From test to End project. -->
+<!-- From test to final project. -->
 <!DOCTYPE html>
 
-<html lang="en"> <!-- I'll maybe just use an AI to create the same page in Swedish later to be able to switch back and forth-->
-   <head> <!-- metadata about the page "document" (not visible on the page)  -->
-    <link rel="stylesheet" href="style.css"> <!-- link the index to to the .css-->
-     <meta charset="UTF-8"> <!-- I don't want Örjan and Åsa to get problems when signing up-->
-     <title>Next event</title> <!-- The title you see in the tab-->
-     <meta name="color-scheme" content="dark"> <!-- Is this correct place for the darkmode? -->
-     <meta name="description" content="Event"> <!-- Meta data that for example search engines use  -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo 2:wght@300;400;500&display=swap" rel="stylesheet">
-     
-   </head>
+<html lang="en">
+  <head>
+    <!-- Metadata about the page document. This is not visible on the page. -->
+    <meta charset="UTF-8">
 
+    <!-- Makes the site work better on phones and tablets. Important for Netlify/live websites. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body> <!-- all content rendered on the webpage, most of it visble for the user -->
-  
-<img class="flames-banner" src="banner.webp" alt="Event banner flames"> <!--width makes the image "follow the page" but later I will controll this with css-->
+    <title>Next Event</title>
 
-<header id="top"> <!-- Normally is id on header needed. But for sake of it i will create a navigation in the footer "back to top" -->
-     <h1>Welcome!</h1> <!-- <h1> Main Heading of the page, (highest importance) -->
-     <p>
-  June 6th<br>
-  It is time for the National Sprint Day Race<br>
-  10:00 – 13:00 </p> <!--<p> stands for paragraph — a block of readable text  -->
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Event registration page for a sprint race in Skövde.">
 
-</header>
-  
-<main>
-   <section id="about" class="event-section"> <!-- Maybe not necessary with sections atm. Need to practice though  -->
-     <h2>About Next race</h2> <!-- second level heading (below h1 in hierarchy) -->    
-   <p>
-  The Käpplunda Sprint Race is a fast and exciting event held on the tarmac paths around Käpplunda in Skövde.
-</p>
+    <link rel="stylesheet" href="style.css">
 
-<p>
-  The course is short, technical, and perfect for high-speed racing with tight turns and quick accelerations.
-</p>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
 
-<p>
-  Everything on wheels is allowed, and the race is run as individual time trials.
-</p>
+  <body>
+    <img class="flames-banner" src="banner.webp" alt="Event banner with flames">
 
-<p>
-  Each participant races against the clock, making it a perfect format for both beginners and experienced riders.
-</p>
+    <header id="top">
+      <h1>Welcome!</h1>
 
-<p>
-  Warm up starts at 09.00
-</p> 
-
-  <!-- </p></p> I Will create a demo and a template -->
-   </section>
-  
-   <section id="location" class="event-section"> <!-- The id is for navigation on in the document (page)  -->
-      <h2>Location</h2>
-      
-      <p>The event will be near the lake behind Käpplunda Skola</p>
-
-      <p>  <!-- It's no diffrence for the browser if I have "<p>" on diffrent lines, but it make it easier for the human to read. -->
-        
-      <a href="https://maps.app.goo.gl/1K6Bobz6H7gRT3bj9" target="_blank" class="map-button">Open map</a>   <!-- Maybe add a map to the page? Target attribute makes the browser open a new tab with the link-->
+      <p>
+        June 6th<br>
+        It is time for the National Sprint Day Race<br>
+        10:00 – 13:00
       </p>
-            
-   </section>
+    </header>
 
-<section id="rules" class="event-section">
-  <h2>Rules and Gear</h2>
+    <main>
+      <section id="about" class="event-section">
+        <h2>About Next Race</h2>
 
-  <p>
-    The Käpplunda Sprint Race is an individual time trial on the tarmac paths around the park.
-    Each participant races against the clock.
-  </p>
+        <p>
+          The Käpplunda Sprint Race is a fast and exciting event held on the tarmac paths around Käpplunda in Skövde.
+        </p>
 
-  <div class="rules-box">
-    <ul>
-      <li>Helmet is required for all participants.</li>
-      <li>Everything on wheels is allowed.</li>
-      <li>Follow the marked course at all times.</li>
-      <li>Do not cut corners or leave the track.</li>
-      <li>Respect other participants, spectators, and park visitors.</li>
-      <li>Follow instructions from marshals and organizers.</li>
-      <li>Start when your name or number is called.</li>
-      <li>The fastest time wins.</li>
-      <li>Bring your own water and food.</li>
-      <li>Free of charge</li>
-    </ul>
-  </div>
-</section>
+        <p>
+          The course is short, technical, and perfect for high-speed racing with tight turns and quick accelerations.
+        </p>
 
-</main>
-   
+        <p>
+          Everything on wheels is allowed, and the race is run as individual time trials.
+        </p>
 
+        <p>
+          Each participant races against the clock, making it a perfect format for both beginners and experienced riders.
+        </p>
 
-<nav class="event-section"> <!-- Do not need id for navigation -->
-   <ul> <!-- A list without any order. <ol> when the list should appear in order-->  
-     <li><a href="#about">About</a></li>
-     <li><a href="#rules">Rules</a></li>
-     <li><a href="#location">Location</a></li>                                            
-     <li><a href="signup.html">Sign up here</a></li> 
-     <li><a href="participants.html">Participants</a></li><!-- <a> Is anchor, HREF is an attribute used in HTML to specify the destination of a link. "Is where the link should be" (destination value?) Sign up here is the visible and clickable text  -->
-     <li><a href="index-sv.html">🇸🇪 Svenska</a></li> <!--emoji!! I'll make a button at the top later-->
- 
-   </ul>
-</nav>
+        <p>
+          Warm up starts at 09:00.
+        </p>
+      </section>
 
+      <section id="location" class="event-section">
+        <h2>Location</h2>
 
-<footer>
-  <address>
-   Contact: 
-    <a href="mailto:racemakers@modul.slmail.me">
-      projectinprogress@modul.slmail.me 
-     </a><br>
-   <!-- <a href="#top">Back to top</a> -->
-  </address>
-</footer>
+        <p>
+          The event will be near the lake behind Käpplunda Skola.
+        </p>
 
-</body>
+        <p>
+          <a href="https://maps.app.goo.gl/1K6Bobz6H7gRT3bj9" target="_blank" class="map-button">
+            Open map
+          </a>
+        </p>
+      </section>
+
+      <section id="rules" class="event-section">
+        <h2>Rules and Gear</h2>
+
+        <p>
+          The Käpplunda Sprint Race is an individual time trial on the tarmac paths around the park.
+          Each participant races against the clock.
+        </p>
+
+        <div class="rules-box">
+          <ul>
+            <li>Helmet is required for all participants.</li>
+            <li>Everything on wheels is allowed.</li>
+            <li>Follow the marked course at all times.</li>
+            <li>Do not cut corners or leave the track.</li>
+            <li>Respect other participants, spectators, and park visitors.</li>
+            <li>Follow instructions from marshals and organizers.</li>
+            <li>Start when your name or number is called.</li>
+            <li>The fastest time wins.</li>
+            <li>Bring your own water and food.</li>
+            <li>Free of charge.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="signup.html">Sign up here</a></li>
+        <li><a href="participants.html">Participants</a></li>
+        <li><a href="index-sv.html">🇸🇪 Svenska</a></li>
+      </ul>
+    </nav>
+
+    <footer>
+      <address>
+        Contact:
+        <a href="mailto:racemakers@modul.slmail.me">
+          projectinprogress@modul.slmail.me
+        </a>
+      </address>
+    </footer>
+  </body>
 </html>
-
-
