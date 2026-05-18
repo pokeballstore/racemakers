@@ -9,6 +9,8 @@
   <!-- Helps browsers understand the page uses dark mode -->
   <meta name="color-scheme" content="dark">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Text shown in the browser tab -->
   <title>Signup</title>
 
@@ -43,40 +45,52 @@
       <h2>Sign up</h2>
 
       <!-- 
-      NETLIFY FORM
+      WEB3FORMS FORM
+
+      action=
+      Sends the form to Web3Forms.
 
       method="POST"
-      Sends the form data.
+      Sends form data securely.
 
-      data-netlify="true"
-      Tells Netlify to collect submissions automatically.
-
-      name="signup"
-      The form name shown inside Netlify dashboard.
+      access_key
+      Your private Web3Forms key.
       -->
 
       <form
-        name="signup"
+        action="https://api.web3forms.com/submit"
         method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/success.html"
         class="signup-form"
       >
 
-        <!-- Hidden form name required by Netlify -->
-        <input type="hidden" name="form-name" value="signup">
+        <!-- YOUR WEB3FORMS ACCESS KEY -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="PASTE_YOUR_ACCESS_KEY_HERE"
+        >
 
+        <!-- Redirect after successful signup -->
+        <input
+          type="hidden"
+          name="redirect"
+          value="https://racemakers.se/success.html"
+        >
 
-        <!-- Hidden anti-spam field -->
-        <p class="hidden">
+        <!-- Optional email subject -->
+        <input
+          type="hidden"
+          name="subject"
+          value="New Racemakers Signup"
+        >
 
-          <label>
-            Do not fill this out:
-            <input name="bot-field">
-          </label>
-
-        </p>
+        <!-- Anti-spam -->
+        <input
+          type="checkbox"
+          name="botcheck"
+          class="hidden"
+          style="display: none;"
+        >
 
 
         <!-- NAME -->
@@ -113,7 +127,6 @@
         </div>
 
 
-
         <!-- MESSAGE -->
         <div class="form-field">
 
@@ -130,31 +143,33 @@
 
         </div>
 
+
         <!-- PUBLIC PARTICIPANT NAME -->
-<div class="form-field">
+        <div class="form-field">
 
-  <label for="public-name">
-    Public participant name:
-  </label><br>
+          <label for="public-name">
+            Public participant name:
+          </label><br>
 
-  <!-- 
-  This is the name shown publicly on the participant page.
-  Users can choose a real name or nickname.
-  -->
+          <!-- 
+          This is the name shown publicly on the participant page.
+          Users can choose a real name or nickname.
+          -->
 
-  <input
-    type="text"
-    id="public-name"
-    name="public-name"
-    placeholder="Real name or nickname"
-    required
-  >
+          <input
+            type="text"
+            id="public-name"
+            name="public-name"
+            placeholder="Real name or nickname"
+            required
+          >
 
-  <small>
-    This name may be shown publicly on the participants page.
-  </small>
+          <small>
+            This name may be shown publicly on the participants page.
+          </small>
 
-</div>
+        </div>
+
 
         <!-- GDPR / PRIVACY CONSENT -->
         <div class="form-field">
