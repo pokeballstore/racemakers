@@ -2,66 +2,105 @@
 <html lang="en">
 
 <head>
+  <!-- Basic page information -->
   <meta charset="UTF-8">
-  <title>Participants</title>
   <meta name="color-scheme" content="dark">
+
+  <title>Participants</title>
+
+  <!-- Connect CSS -->
   <link rel="stylesheet" href="style.css">
-     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo 2:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-  <h1>Participants</h1>
-  <p>People signed up for the event</p>
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>Participants</h1>
 
-<main>
-  <section class="event-section">
-    <h2>Participant List</h2>
+    <p>
+      Public participant names for the next Racemakers event.
+    </p>
+  </header>
 
-    <ul class="participants-list" id="participants-list">
-      <!-- JavaScript will fill this -->
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <section class="event-section">
+
+      <h2>Participant List</h2>
+
+      <p>
+        Only the public name chosen during signup will be shown here.
+        Email addresses and private messages will not be published.
+      </p>
+
+      <!-- 
+      For now this list is written manually.
+      Later, when Netlify Forms is working, submissions will arrive in Netlify.
+      Then you can copy approved public names here.
+      -->
+      <div class="rules-box">
+
+        <ul class="participants-list">
+
+          <li>No public participants added yet.</li>
+
+          <!-- Example later:
+          <li>Speedy Mario</li>
+          <li>Anna</li>
+          <li>BikeMaster42</li>
+          -->
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <section class="event-section">
+
+      <h2>Privacy</h2>
+
+      <p>
+        To protect privacy, this page only shows the participant name or nickname
+        that the person has chosen to make public.
+      </p>
+
+      <p>
+        If you want your name removed from this list, contact Racemakers.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#rules">Rules</a></li>
+      <li><a href="index.html#location">Location</a></li>
+      <li><a href="signup.html">Sign up here</a></li>
+      <li><a href="participants.html">Participants</a></li>
+      <li><a href="index.html">Home</a></li>
     </ul>
+  </nav>
 
-  </section>
-</main>
 
-       <nav>
-           <ul>
-                 
-                <li><a href="index.html#about">About</a></li> <!-- Changed so href is linking to the correct document -->
-                 <li><a href="index.html#rules">Rules</a></li> <!-- Otherwise it is searching inisde this document for "Rules" -->
-                 <li><a href="index.html#location">Location</a></li>                                          
-                 <li><a href="signup.html">Sign up here</a></li> 
-                 <li><a href="participants.html">Participants</a></li>
-                 <li><a href="index.html">Home</a></li>
-           </ul>
-
-        </nav>
-
-<footer>
-  <p>Data stored locally in browser</p>
-</footer>
-
-<script>
-const list = document.getElementById("participants-list");
-const rawParticipants = localStorage.getItem("participants");
-
-console.log("Raw from localStorage:", rawParticipants);
-
-const participants = JSON.parse(rawParticipants) || [];
-
-console.log("Parsed participants:", participants);
-
-list.innerHTML = "";
-
-participants.forEach(function(name) {
-  const li = document.createElement("li");
-  li.textContent = name;
-  list.appendChild(li);
-});
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Participant names are updated manually after signup approval.
+    </p>
+  </footer>
 
 </body>
+
 </html>
