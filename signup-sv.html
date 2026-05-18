@@ -6,14 +6,20 @@
   <!-- Grundläggande sidinformation -->
   <meta charset="UTF-8">
 
-  <!-- Stöd för mörkt läge -->
-  <meta name="color-scheme" content="dark">
-
   <!-- Mobilanpassning -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Stöd för mörkt läge -->
+  <meta name="color-scheme" content="dark">
+
   <!-- Titel i webbläsarfliken -->
-  <title>Anmälan lyckades | Racemakers</title>
+  <title>Anmälan | Racemakers</title>
+
+  <!-- SEO-beskrivning -->
+  <meta
+    name="description"
+    content="Anmäl dig till Racemakers sprinttävling i Skövde."
+  >
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
@@ -39,57 +45,200 @@
   <!-- HEADER -->
   <header id="top">
 
-    <h1>Anmälan lyckades</h1>
+    <h1>Anmälningssida</h1>
 
     <p>
-      Din anmälan har tagits emot.
+      Registrera dig för nästa Racemakers-evenemang.
     </p>
 
   </header>
 
 
-  <!-- HUVUDINNEHÅLL -->
+  <!-- MAIN -->
   <main>
 
-    <!-- BEKRÄFTELSEMEDDELANDE -->
+    <!-- ANMÄLNINGSSEKTION -->
     <section class="event-section">
 
-      <div class="rules-box">
+      <h2>Anmälan</h2>
 
-        <h2>Tack!</h2>
+      <!-- WEB3FORMS -->
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="signup-form"
+      >
 
-        <p>
-          Tack för att du anmälde dig till Racemakers-evenemanget.
-        </p>
+        <!-- WEB3FORMS ACCESS KEY -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="98e4fe18-87f1-4d96-8748-3ef54183e740"
+        >
 
-        <p>
-          Din anmälan har skickats in framgångsrikt.
-        </p>
+        <!-- Omdirigering efter lyckad anmälan -->
+        <input
+          type="hidden"
+          name="redirect"
+          value="https://racemakers.se/success-sv.html"
+        >
 
-        <p>
-          Vi ser fram emot att träffa dig på tävlingen.
-        </p>
+        <!-- Valfritt e-postämne -->
+        <input
+          type="hidden"
+          name="subject"
+          value="Ny Racemakers-anmälan"
+        >
 
-      </div>
+        <!-- Anti-spam -->
+        <input
+          type="checkbox"
+          name="botcheck"
+          class="hidden"
+          style="display: none;"
+        >
+
+
+        <!-- NAMN -->
+        <div class="form-field">
+
+          <label for="name">
+            Namn:
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+          >
+
+        </div>
+
+
+        <!-- E-POST -->
+        <div class="form-field">
+
+          <label for="email">
+            E-post:
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          >
+
+        </div>
+
+
+        <!-- MEDDELANDE -->
+        <div class="form-field">
+
+          <label for="message">
+            Meddelande:
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+          ></textarea>
+
+        </div>
+
+
+        <!-- OFFENTLIGT NAMN -->
+        <div class="form-field">
+
+          <label for="public-name">
+            Offentligt deltagarnamn:
+          </label>
+
+          <input
+            type="text"
+            id="public-name"
+            name="public-name"
+            placeholder="Riktigt namn eller smeknamn"
+            required
+          >
+
+          <small>
+            Detta namn kan visas offentligt på deltagarsidan.
+          </small>
+
+        </div>
+
+
+        <!-- GDPR -->
+        <div class="form-field">
+
+          <label>
+
+            <input
+              type="checkbox"
+              name="gdpr-consent"
+              required
+            >
+
+            Jag godkänner att Racemakers får lagra min inskickade information
+            för att hantera evenemangsanmälan.
+
+          </label>
+
+        </div>
+
+
+        <!-- ANSVARSFRISKRIVNING -->
+        <div class="form-field">
+
+          <label>
+
+            <input
+              type="checkbox"
+              name="liability-waiver"
+              required
+            >
+
+            Jag förstår att deltagande sker på egen risk.
+            Racemakers och arrangörerna kan inte hållas ansvariga
+            för skador, olyckor, förlust eller andra problem under evenemanget.
+
+          </label>
+
+        </div>
+
+
+        <!-- SKICKA-KNAPP -->
+        <div class="form-actions">
+
+          <button type="submit">
+            Skicka
+          </button>
+
+        </div>
+
+      </form>
 
     </section>
 
 
-    <!-- SNABBLÄNKAR -->
+    <!-- INTEGRITET -->
     <section class="event-section">
 
-      <h2>Fortsätt</h2>
+      <h2>Integritet</h2>
 
       <p>
-        <a href="index-sv.html" class="map-button">
-          Tillbaka till startsidan
-        </a>
+        Informationen du skickar in används endast för att hantera denna anmälan.
       </p>
 
       <p>
-        <a href="participants-sv.html" class="map-button">
-          Visa deltagare
-        </a>
+        Vi säljer eller delar inte din information med tredje part.
+      </p>
+
+      <p>
+        Endast det offentliga deltagarnamnet eller smeknamnet kan visas offentligt.
       </p>
 
     </section>
@@ -116,7 +265,7 @@
 
       <li><a href="racemakers-sv.html">Racemakers</a></li>
 
-      <li><a href="signup-success.html">🇬🇧 English</a></li>
+      <li><a href="signup.html">🇬🇧 English</a></li>
 
     </ul>
 
@@ -134,7 +283,7 @@
     </address>
 
     <p>
-      Racemakers Community Project
+      Snabbaste tiden vinner äran.
     </p>
 
   </footer>
