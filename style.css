@@ -1,6 +1,9 @@
-/* CSS */
+/* =========================
+   RACEMAKERS MAIN CSS
+========================= */
 
-/* GENERAL PAGE SETTINGS */
+
+/* GENERAL SETTINGS */
 
 * {
   box-sizing: border-box;
@@ -8,35 +11,45 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-bottom: 110px;
+
+  /* Prevents sticky nav from covering sections */
+  scroll-padding-bottom: 120px;
 }
 
 body {
   margin: 0;
-  font-family: 'Exo 2', sans-serif;
+
   background: #000000;
   color: #eeeeee;
-  line-height: 1.6;
+
+  font-family: 'Exo 2', sans-serif;
   font-size: 21px;
+  line-height: 1.6;
 }
 
 
-/* BANNER */
+/* =========================
+   BANNER
+========================= */
 
 .flames-banner {
   width: 100%;
   height: 180px;
+
   object-fit: contain;
   display: block;
 }
 
 
-/* HEADINGS */
+/* =========================
+   TYPOGRAPHY
+========================= */
 
 h1,
 h2,
 h3 {
   font-family: 'Orbitron', sans-serif;
+
   letter-spacing: 2px;
   color: #ffffff;
 }
@@ -49,20 +62,33 @@ h2 {
   color: #f7c948;
 }
 
+p,
+li,
+label,
+input,
+textarea,
+button,
+a {
+  font-family: 'Exo 2', sans-serif;
+}
 
-/* PAGE LAYOUT */
+
+/* =========================
+   PAGE LAYOUT
+========================= */
 
 main,
 header,
 footer {
   max-width: 900px;
+
   margin: 0 auto;
   padding: 0 24px;
 }
 
 header {
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .event-section {
@@ -70,15 +96,34 @@ header {
 }
 
 
-/* NAVIGATION BAR */
+/* =========================
+   SECTION BOXES
+========================= */
+
+.rules-box,
+.signup-form {
+  background: rgba(15, 15, 15, 0.95);
+
+  border-left: 4px solid #d4a017;
+  border-radius: 0 12px 12px 0;
+
+  padding: 24px;
+}
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
 
 nav {
   position: sticky;
   bottom: 0;
-  z-index: 10;
+  z-index: 999;
 
-  background: rgba(10, 10, 10, 0.92);
+  background: rgba(10, 10, 10, 0.95);
+
   border-top: 2px solid #d4a017;
+
   backdrop-filter: blur(10px);
 
   padding: 8px 0;
@@ -86,11 +131,14 @@ nav {
 
 nav ul {
   display: flex;
+
   justify-content: center;
   align-items: center;
+
   gap: 12px;
 
   list-style: none;
+
   margin: 0;
   padding: 0 12px;
 
@@ -98,150 +146,67 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  font-family: 'Orbitron', sans-serif;
+
+  color: #ffffff;
   text-decoration: none;
 
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+
   padding: 6px 10px;
 
   border-radius: 8px;
+
   transition: 0.2s ease;
 }
 
 nav a:hover {
   background: rgba(212, 160, 23, 0.15);
+
   color: #f7c948;
 }
 
 
-/* BOXES */
+/* =========================
+   BUTTONS
+========================= */
 
-.rules-box {
-  background: rgba(17, 17, 17, 0.96);
-  padding: 24px;
-  border-left: 4px solid #d4a017;
-  border-radius: 0 12px 12px 0;
-}
-
-
-/* FORMS */
-
-.hidden {
-  display: none;
-}
-
-.signup-form {
-  background: rgba(17, 17, 17, 0.96);
-  padding: 28px;
-  border-left: 4px solid #d4a017;
-  border-radius: 0 14px 14px 0;
-}
-
-.form-field {
-  margin-bottom: 22px;
-}
-
-.signup-form label {
-  display: block;
-  margin-bottom: 8px;
-  color: #ffffff;
-}
-
-.signup-form small {
-  display: block;
-  margin-top: 6px;
-  color: #bbbbbb;
-}
-
-.signup-form input,
-.signup-form textarea {
-  width: 100%;
-  padding: 12px;
-
-  font: inherit;
-  color: #ffffff;
-
-  background: #080808;
-  border: 1px solid rgba(212, 160, 23, 0.45);
-  border-radius: 10px;
-}
-
-.signup-form input:focus,
-.signup-form textarea:focus {
-  outline: none;
-  border-color: #f7c948;
-  box-shadow: 0 0 12px rgba(212, 160, 23, 0.25);
-}
-
-.signup-form textarea {
-  resize: vertical;
-}
-
-.signup-form input[type="checkbox"] {
-  width: auto;
-  margin-right: 10px;
-}
-
+.map-button,
 .signup-form button {
-  width: 100%;
-  padding: 12px 18px;
-
-  font: inherit;
-  font-weight: 600;
-
-  background: rgba(10, 10, 10, 0.92);
-  color: white;
-
-  border: 2px solid #d4a017;
-  border-radius: 10px;
-
-  cursor: pointer;
-  transition: 0.2s ease;
-
-  box-shadow: 0 0 12px rgba(212, 160, 23, 0.15);
-}
-
-.signup-form button:hover {
-  background: rgba(212, 160, 23, 0.12);
-  color: #f7c948;
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px rgba(212, 160, 23, 0.3);
-}
-
-
-/* BUTTONS */
-
-.map-button {
   display: inline-block;
 
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+
   background: rgba(10, 10, 10, 0.92);
-  color: white;
+  color: #f7c948;
 
   text-decoration: none;
 
-  border: 2px solid #d4a017;
-  border-radius: 10px;
+  border: 1px solid rgba(212, 160, 23, 0.8);
+  border-radius: 8px;
 
-  padding: 10px 18px;
+  padding: 8px 14px;
 
-  font-size: 0.95rem;
-  font-weight: 500;
+  cursor: pointer;
 
   transition: 0.2s ease;
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 0 12px rgba(212, 160, 23, 0.15);
 }
 
-.map-button:hover {
-  background: rgba(212, 160, 23, 0.12);
-  color: #f7c948;
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px rgba(212, 160, 23, 0.3);
+.map-button:hover,
+.signup-form button:hover {
+  background: rgba(212, 160, 23, 0.15);
+
+  color: #ffffff;
 }
 
 
-/* LINKS */
+/* =========================
+   LINKS
+========================= */
 
 a {
   color: #f7c948;
@@ -252,22 +217,111 @@ a:hover {
 }
 
 
-/* FOOTER */
+/* =========================
+   FORMS
+========================= */
+
+.hidden {
+  display: none;
+}
+
+.form-field {
+  margin-bottom: 22px;
+}
+
+.signup-form label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ffffff;
+}
+
+.signup-form small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #bbbbbb;
+}
+
+.signup-form input,
+.signup-form textarea {
+  width: 100%;
+
+  padding: 12px;
+
+  font: inherit;
+
+  background: #080808;
+  color: #ffffff;
+
+  border: 1px solid rgba(212, 160, 23, 0.45);
+  border-radius: 10px;
+}
+
+.signup-form input:focus,
+.signup-form textarea:focus {
+  outline: none;
+
+  border-color: #f7c948;
+
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.25);
+}
+
+.signup-form textarea {
+  resize: vertical;
+}
+
+.signup-form input[type="checkbox"] {
+  width: auto;
+
+  margin-right: 10px;
+}
+
+.signup-form button {
+  width: 100%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   padding-top: 30px;
-  padding-bottom: 140px;
+
+  /* Extra space because of sticky nav */
+  padding-bottom: 180px;
+
+  text-align: center;
+
   color: #bbbbbb;
+}
+
+footer address {
+  font-style: normal;
 }
 
 footer a {
   color: #f7c948;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+footer a:hover {
+  color: #ffffff;
 }
 
 
-/* PHONE SETTINGS */
+/* =========================
+   MOBILE SETTINGS
+========================= */
 
 @media (max-width: 600px) {
+
   body {
     font-size: 18px;
   }
@@ -290,13 +344,19 @@ footer a {
     padding: 32px 0;
   }
 
-  .signup-form,
-  .rules-box {
+  .rules-box,
+  .signup-form {
     padding: 20px;
   }
 
   nav a {
-    font-size: 0.85rem;
-    padding: 6px 9px;
+    font-size: 0.72rem;
+
+    padding: 5px 8px;
+  }
+
+  .map-button,
+  .signup-form button {
+    font-size: 0.8rem;
   }
 }
