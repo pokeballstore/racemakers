@@ -1,38 +1,38 @@
-<!-- Final public homepage for Racemakers. -->
+<!-- Slutlig svensk startsida för Racemakers. -->
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="sv">
 
 <head>
 
-  <!-- Basic page information -->
+  <!-- Grundläggande sidinformation -->
   <meta charset="UTF-8">
 
-  <!-- Makes the site scale correctly on phones and tablets -->
+  <!-- Gör sidan bra på mobil och surfplatta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tells the browser this page is designed for dark mode -->
+  <!-- Sidan är designad för mörkt tema -->
   <meta name="color-scheme" content="dark">
 
-  <!-- Page title shown in the browser tab and search results -->
+  <!-- Titel i webbläsarfliken -->
   <title>Sprint Race</title>
 
-  <!-- Search engine description -->
+  <!-- Sökmotorbeskrivning -->
   <meta
     name="description"
-    content="Racemakers is a local time trial event in Skövde. Sign up, race the course, and compete for the fastest time."
+    content="Racemakers är ett lokalt sprint race och tidtagnings-event i Skövde. Kör den ungefär 1 km långa banan runt Käpplunda och tävla om snabbaste tiden."
   >
 
-  <!-- Extra search words -->
+  <!-- Sökord -->
   <meta
     name="keywords"
-    content="Racemakers, time trial, race event, Skövde, Käpplunda, cycling, wheels, local event"
+    content="Racemakers, sprint race, tidtagning, Skövde, Käpplunda, cykel, race event, lokalt race, community event"
   >
 
-  <!-- Site author -->
+  <!-- Sidans skapare -->
   <meta name="author" content="Racemakers">
 
-  <!-- Connect CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Fonts -->
@@ -45,81 +45,76 @@
 
 <body>
 
-  <!-- Top banner image -->
+  <!-- Toppbanner -->
   <img
     class="flames-banner"
     src="banner.webp"
-    alt="Racemakers event banner with flames"
+    alt="Racemakers eventbanner med eld"
   >
 
 
-  <!-- Page header / hero text -->
+  <!-- HERO / HEADER -->
   <header id="top">
 
     <h1>National Sprint Race Day</h1>
 
     <p>
-      June 6th<br>
+      6 juni<br>
       Sprint Race<br>
       Käpplunda<br>
       10:00 – 13:00
     </p>
 
     <p>
-      Fastest time wins the honor.
-    </p>
-
-    <p>
       <a href="signup.html" class="map-button">
-        Sign up here
+        Anmäl dig här
       </a>
     </p>
 
   </header>
 
 
-  <!-- Main page content -->
+  <!-- HUVUDINNEHÅLL -->
   <main>
 
-    <!-- ABOUT SECTION -->
+    <!-- BRA ATT VETA -->
     <section id="about" class="event-section">
 
-      <h2>Good to know/h2>
+      <h2>Bra att veta</h2>
 
       <p>
-        The Käpplunda Sprint Race is a local time trial event on the tarmac paths
-        around Käpplunda in Skövde.
+        Sprint Race är ett lokalt tidtagnings-event
+        på asfaltvägarna runt Käpplunda i Skövde.
       </p>
 
       <p>
-        The course is short, technical, and made for quick racing with turns,
-        accelerations, and focus.
+        Banan är kort, teknisk och gjord för snabb körning
+        med flytande kurvor, accelerationer och rytm.
       </p>
 
       <p>
-        Everything on wheels is allowed. Each participant races individually
-        against the clock.
+        Deltagarna kör individuellt mot klockan.
       </p>
 
       <p>
-        This makes the event simple, fun, and open for both beginners and more
-        experienced riders.
+        Eventet är tänkt att vara enkelt, socialt
+        och öppet för både nybörjare och mer erfarna deltagare.
       </p>
 
       <p>
-        Warm up starts at 09:00.
+        Uppvärmning startar 09:00.
       </p>
 
     </section>
 
 
-    <!-- LOCATION SECTION -->
+    <!-- PLATS -->
     <section id="location" class="event-section">
 
-      <h2>Location</h2>
+      <h2>Plats</h2>
 
       <p>
-        The event will be near the lake behind Käpplunda Skola in Skövde.
+        Eventet hålls nära sjöarna bakom Käpplunda Skola i Skövde.
       </p>
 
       <p>
@@ -129,84 +124,94 @@
           rel="noopener noreferrer"
           class="map-button"
         >
-          Open map
+          Öppna karta
         </a>
       </p>
 
     </section>
 
 
-    <!-- RULES SECTION -->
-    <section id="rules" class="event-section">
+    <!-- BANA -->
+    <section id="course" class="event-section">
 
-      <h2>Rules and Gear</h2>
+      <h2>Bana</h2>
 
-      <p>
-        The race is an individual time trial. Each participant starts alone and
-        races against the clock.
-      </p>
-
+      <!-- BANINFO -->
       <div class="rules-box">
 
         <ul>
-          <li>Helmet is required for all participants.</li>
-          <li>Everything on wheels is allowed.</li>
-          <li>Follow the marked course at all times.</li>
-          <li>Do not cut corners or leave the track.</li>
-          <li>Respect participants, spectators, and park visitors.</li>
-          <li>Follow instructions from marshals and organizers.</li>
-          <li>Start when your name or number is called.</li>
-          <li>There are no prizes — only honor.</li>
-          <li>The fastest time wins.</li>
-          <li>Bring your own water and food.</li>
-          <li>The event is free of charge.</li>
+          <li>Ungefär 1 km lång</li>
+          <li>Slutliga banmarkeringar kan justeras</li>
         </ul>
+
+        <!-- BANBILD -->
+        <img
+          src="course-map.jpg"
+          alt="Banskiss för Käpplunda Sprint Race"
+          class="course-image"
+        >
 
       </div>
 
     </section>
 
 
-    <!-- SIGNUP SECTION -->
-    <section class="event-section">
+    <!-- REGLER -->
+    <section id="rules" class="event-section">
 
-      <h2>Sign Up</h2>
-
-      <p>
-        Register before the event so the organizers can prepare the start list.
-      </p>
+      <h2>Regler och utrustning</h2>
 
       <p>
-        <a href="signup.html" class="map-button">
-          Go to signup page
-        </a>
+        Tävlingen är en individuell tidtagning.
+        Varje deltagare startar ensam och kör mot klockan.
       </p>
+
+      <div class="rules-box">
+
+        <ul>
+          <li>Hjälm är obligatorisk för alla deltagare.</li>
+          <li>Alla icke-motordrivna fordon på hjul är välkomna.</li>
+          <li>Följ den markerade banan hela tiden.</li>
+          <li>Det är inte tillåtet att gena eller lämna banan.</li>
+          <li>Kör säkert och efter din egen förmåga.</li>
+          <li>Visa respekt för deltagare, publik och personer i parken.</li>
+          <li>Följ instruktioner från funktionärer och arrangörer.</li>
+          <li>Starta när ditt namn eller nummer ropas upp.</li>
+          <li>Det finns inga priser — bara ära.</li>
+          <li>Snabbast tid vinner.</li>
+          <li>Ta med egen vattenflaska och mat vid behov.</li>
+          <li>Eventet är kostnadsfritt.</li>
+        </ul>
+
+      </div>
 
     </section>
 
   </main>
 
 
-  <!-- Navigation links -->
+  <!-- NAVIGATION -->
   <nav>
 
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#rules">Rules</a></li>
-      <li><a href="#location">Location</a></li>
-      <li><a href="signup.html">Sign up here</a></li>
-      <li><a href="participants.html">Participants</a></li>
-      <li><a href="index-sv.html">🇸🇪 Svenska</a></li>
+      <li><a href="#about">Om</a></li>
+      <li><a href="#course">Bana</a></li>
+      <li><a href="#rules">Regler</a></li>
+      <li><a href="#location">Plats</a></li>
+      <li><a href="signup.html">Anmälan</a></li>
+      <li><a href="participants.html">Deltagare</a></li>
+      <li><a href="racemakers.html">Racemakers</a></li>
+      <li><a href="index.html">🇬🇧 English</a></li>
     </ul>
 
   </nav>
 
 
-  <!-- Footer with contact information -->
+  <!-- FOOTER -->
   <footer>
 
     <address>
-      Contact:
+      Kontakt:
       <a href="mailto:racemakers@modul.slmail.me">
         racemakers@modul.slmail.me
       </a>

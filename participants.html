@@ -2,35 +2,62 @@
 <html lang="en">
 
 <head>
+
   <!-- Basic page information -->
   <meta charset="UTF-8">
+
+  <!-- Dark mode support -->
   <meta name="color-scheme" content="dark">
+
+  <!-- Mobile support -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Participants</title>
+  <!-- Browser tab title -->
+  <title>Participants | Racemakers</title>
 
-  <!-- Connect CSS -->
+  <!-- SEO description -->
+  <meta
+    name="description"
+    content="Public participant list for the Racemakers sprint race event in Skövde."
+  >
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
 </head>
 
 <body>
 
+  <!-- Top banner -->
+  <img
+    class="flames-banner"
+    src="banner.webp"
+    alt="Racemakers flames banner"
+  >
+
+
   <!-- HEADER -->
-  <header>
+  <header id="top">
+
     <h1>Participants</h1>
 
     <p>
       Public participant names for the next Racemakers event.
     </p>
+
   </header>
 
 
   <!-- MAIN CONTENT -->
   <main>
 
+    <!-- PARTICIPANT LIST -->
     <section class="event-section">
 
       <h2>Participant List</h2>
@@ -40,30 +67,24 @@
         Email addresses and private messages will not be published.
       </p>
 
-      <!-- 
-      For now this list is written manually.
-      Web3Forms sends the signup information to your email.
-      After checking the signup, you can copy the approved public name here.
-      -->
       <div class="rules-box">
 
         <ul class="participants-list">
 
           <li>No public participants added yet.</li>
 
-          <!-- Example later:
-          <li>Speedy Mario</li>
-          <li>Anna</li>
-          <li>BikeMaster42</li>
-          -->
-
         </ul>
 
       </div>
 
+      <p>
+        Participant names are updated manually after signup approval.
+      </p>
+
     </section>
 
 
+    <!-- PRIVACY -->
     <section class="event-section">
 
       <h2>Privacy</h2>
@@ -79,27 +100,61 @@
 
     </section>
 
+
+    <!-- BUTTON -->
+    <section class="event-section">
+
+      <p>
+        <a href="signup.html" class="map-button">
+          Go to signup page
+        </a>
+      </p>
+
+    </section>
+
   </main>
 
 
   <!-- NAVIGATION -->
   <nav>
+
     <ul>
+
       <li><a href="index.html#about">About</a></li>
+
+      <li><a href="index.html#course">Course</a></li>
+
       <li><a href="index.html#rules">Rules</a></li>
+
       <li><a href="index.html#location">Location</a></li>
-      <li><a href="signup.html">Sign up here</a></li>
+
+      <li><a href="signup.html">Sign up</a></li>
+
       <li><a href="participants.html">Participants</a></li>
-      <li><a href="index.html">Home</a></li>
+
+      <li><a href="racemakers.html">Racemakers</a></li>
+
+      <li><a href="index-sv.html">🇸🇪 Svenska</a></li>
+
     </ul>
+
   </nav>
 
 
   <!-- FOOTER -->
   <footer>
+
+    <address>
+      Contact:
+      <a href="mailto:racemakers@modul.slmail.me">
+        racemakers@modul.slmail.me
+      </a>
+    </address>
+
     <p>
-      Participant names are updated manually after signup approval.
+      Racemakers Community Project
     </p>
+
   </footer>
 
 </body>
