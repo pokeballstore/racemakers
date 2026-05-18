@@ -3,31 +3,31 @@
 /* GENERAL PAGE SETTINGS */
 
 * {
-  box-sizing: border-box; /* Makes padding and border included in the element width */
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;       /* Makes anchor links scroll smoothly */
-  scroll-padding-bottom: 100px;  /* Prevents fixed bottom nav from covering linked sections */
+  scroll-behavior: smooth;
+  scroll-padding-bottom: 110px;
 }
 
 body {
-  margin: 0;                     /* Removes default browser margin */
-  font-family: 'Exo 2', sans-serif; /* Main text font */
-  background: #000000;           /* Black background */
-  color: #eee;                   /* Light text */
-  line-height: 1.6;              /* More readable line spacing */
-  font-size: 22px;               /* Base text size */
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+  background: #000000;
+  color: #eeeeee;
+  line-height: 1.6;
+  font-size: 21px;
 }
 
 
 /* BANNER */
 
 .flames-banner {
-  width: 100%;                   /* Makes banner fill the page width */
-  height: 180px;                 /* Controls desktop banner height */
-  object-fit: contain;           /* Shows full image without cropping */
-  display: block;                /* Removes small image gap underneath */
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
 }
 
 
@@ -36,8 +36,17 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Orbitron', sans-serif; /* Futuristic heading font */
-  letter-spacing: 2px;                 /* Adds space between letters */
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  color: #f7c948;
 }
 
 
@@ -46,143 +55,213 @@ h3 {
 main,
 header,
 footer {
-  max-width: 900px;              /* Prevents text from becoming too wide */
-  margin: 0 auto;                /* Centers content */
-  padding: 0 24px;               /* Adds side spacing */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header {
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 
 .event-section {
-  padding: 50px 0;               /* Space above and below sections */
+  padding: 44px 0;
 }
 
 
-/* NAVIGATION */
-
 /* NAVIGATION BAR */
+
 nav {
   position: sticky;
   bottom: 0;
+  z-index: 10;
 
   background: rgba(10, 10, 10, 0.92);
-
   border-top: 2px solid #d4a017;
-
   backdrop-filter: blur(10px);
 
   padding: 8px 0;
 }
 
-
-/* NAVIGATION LIST */
 nav ul {
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-  gap: 14px;
+  gap: 12px;
 
   list-style: none;
-
   margin: 0;
-
-  padding: 0;
+  padding: 0 12px;
 
   flex-wrap: wrap;
 }
 
-
-/* NAVIGATION LINKS */
 nav a {
   color: white;
-
   text-decoration: none;
 
   font-size: 0.9rem;
-
   padding: 6px 10px;
 
   border-radius: 8px;
-
   transition: 0.2s ease;
 }
 
-
-/* HOVER EFFECT */
 nav a:hover {
   background: rgba(212, 160, 23, 0.15);
-
   color: #f7c948;
 }
 
 
-/* RULES */
+/* BOXES */
 
 .rules-box {
-  background: #111;              /* Slightly lighter black box */
-  padding: 24px;                 /* Space inside rules box */
-  border-left: 4px solid gold;   /* Gold accent line */
+  background: rgba(17, 17, 17, 0.96);
+  padding: 24px;
+  border-left: 4px solid #d4a017;
+  border-radius: 0 12px 12px 0;
 }
 
 
 /* FORMS */
 
 .hidden {
-  display: none;                 /* Hides Netlify anti-spam field */
+  display: none;
 }
 
-.signup-form input,
-.signup-form textarea,
-.signup-form button {
-  width: 100%;                   /* Makes form controls fill available width */
-  padding: 12px;                 /* Space inside inputs */
-  font: inherit;                 /* Uses same font as the rest of the site */
+.signup-form {
+  background: rgba(17, 17, 17, 0.96);
+  padding: 28px;
+  border-left: 4px solid #d4a017;
+  border-radius: 0 14px 14px 0;
 }
 
 .form-field {
-  margin-bottom: 20px;           /* Space between form fields */
+  margin-bottom: 22px;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.signup-form small {
+  display: block;
+  margin-top: 6px;
+  color: #bbbbbb;
+}
+
+.signup-form input,
+.signup-form textarea {
+  width: 100%;
+  padding: 12px;
+
+  font: inherit;
+  color: #ffffff;
+
+  background: #080808;
+  border: 1px solid rgba(212, 160, 23, 0.45);
+  border-radius: 10px;
+}
+
+.signup-form input:focus,
+.signup-form textarea:focus {
+  outline: none;
+  border-color: #f7c948;
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.25);
 }
 
 .signup-form textarea {
-  resize: vertical;              /* User can resize textarea only up/down */
+  resize: vertical;
+}
+
+.signup-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
 }
 
 .signup-form button {
-  background: #333;              /* Button background */
-  color: gold;                   /* Button text */
-  border: none;                  /* Removes default border */
-  cursor: pointer;               /* Shows clickable hand cursor */
+  width: 100%;
+  padding: 12px 18px;
+
+  font: inherit;
+  font-weight: 600;
+
+  background: rgba(10, 10, 10, 0.92);
+  color: white;
+
+  border: 2px solid #d4a017;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.15);
 }
 
 .signup-form button:hover {
-  background: #555;              /* Button hover effect */
+  background: rgba(212, 160, 23, 0.12);
+  color: #f7c948;
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(212, 160, 23, 0.3);
 }
 
 
 /* BUTTONS */
 
 .map-button {
-  display: inline-block;         /* Makes link behave like a button */
-  padding: 12px 24px;            /* Button spacing */
-  background: #333;              /* Button background */
-  color: gold;                   /* Button text */
-  text-decoration: none;         /* Removes underline */
+  display: inline-block;
+
+  background: rgba(10, 10, 10, 0.92);
+  color: white;
+
+  text-decoration: none;
+
+  border: 2px solid #d4a017;
+  border-radius: 10px;
+
+  padding: 10px 18px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.15);
 }
 
 .map-button:hover {
-  background: #555;              /* Hover effect */
+  background: rgba(212, 160, 23, 0.12);
+  color: #f7c948;
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(212, 160, 23, 0.3);
+}
+
+
+/* LINKS */
+
+a {
+  color: #f7c948;
+}
+
+a:hover {
+  color: #ffffff;
 }
 
 
 /* FOOTER */
 
 footer {
-  padding-bottom: 140px;         /* Keeps footer above fixed nav */
+  padding-top: 30px;
+  padding-bottom: 140px;
+  color: #bbbbbb;
 }
 
 footer a {
-  color: gold;                   /* Footer links match theme */
+  color: #f7c948;
 }
 
 
@@ -190,19 +269,34 @@ footer a {
 
 @media (max-width: 600px) {
   body {
-    font-size: 18px;             /* Smaller text on phones */
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
   }
 
   .flames-banner {
-    height: auto;                /* Keeps full banner image on phones */
+    height: auto;
   }
 
-  nav a {
-    padding: 10px 14px;          /* Smaller nav buttons on phones */
-    font-size: 16px;             /* Smaller nav text */
+  main,
+  header,
+  footer {
+    padding: 0 18px;
   }
 
   .event-section {
-    padding: 32px 0;             /* Less section spacing on phones */
+    padding: 32px 0;
+  }
+
+  .signup-form,
+  .rules-box {
+    padding: 20px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    padding: 6px 9px;
   }
 }
