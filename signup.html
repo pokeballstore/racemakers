@@ -1,131 +1,254 @@
-<form
-  action="https://api.web3forms.com/submit"
-  method="POST"
-  class="signup-form"
->
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Web3Forms access key -->
-  <input
-    type="hidden"
-    name="access_key"
-    value="98e4fe18-87f1-4d96-8748-3ef54183e740"
-  >
+<head>
 
-  <!-- Redirect after successful submission -->
-  <input
-    type="hidden"
-    name="redirect"
-    value="https://racemakers.se/success.html"
-  >
+  <!-- Basic page information -->
+  <meta charset="UTF-8">
 
-  <!-- Optional email subject -->
-  <input
-    type="hidden"
-    name="subject"
-    value="New Racemakers Signup"
-  >
+  <!-- Mobile scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Anti-spam -->
-  <input
-    type="checkbox"
-    name="botcheck"
-    class="hidden"
-    style="display: none;"
-  >
+  <!-- Dark mode support -->
+  <meta name="color-scheme" content="dark">
 
-  <!-- NAME -->
-  <div class="form-field">
+  <!-- Browser tab title -->
+  <title>Signup</title>
 
-    <label for="name">
-      Name:
-    </label><br>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-    <input
-      type="text"
-      id="name"
-      name="name"
-      required
-    >
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
 
-  </div>
+</head>
 
-  <!-- EMAIL -->
-  <div class="form-field">
+<body>
 
-    <label for="email">
-      Email:
-    </label><br>
+  <!-- HEADER -->
+  <header>
 
-    <input
-      type="email"
-      id="email"
-      name="email"
-      required
-    >
+    <h1>Signup Page</h1>
 
-  </div>
+    <p>
+      Register for the next Racemakers event.
+    </p>
 
-  <!-- MESSAGE -->
-  <div class="form-field">
+  </header>
 
-    <label for="message">
-      Message:
-    </label><br>
 
-    <textarea
-      id="message"
-      name="message"
-      rows="6"
-    ></textarea>
+  <!-- MAIN -->
+  <main>
 
-  </div>
+    <!-- SIGNUP SECTION -->
+    <section class="event-section">
 
-  <!-- PUBLIC PARTICIPANT NAME -->
-  <div class="form-field">
+      <h2>Sign up</h2>
 
-    <label for="public-name">
-      Public participant name:
-    </label><br>
-
-    <input
-      type="text"
-      id="public-name"
-      name="public-name"
-      placeholder="Real name or nickname"
-      required
-    >
-
-    <small>
-      This name may be shown publicly on the participants page.
-    </small>
-
-  </div>
-
-  <!-- GDPR -->
-  <div class="form-field">
-
-    <label>
-
-      <input
-        type="checkbox"
-        name="gdpr-consent"
-        required
+      <!-- WEB3FORMS -->
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="signup-form"
       >
 
-      I agree that Racemakers may store my submitted information
-      to manage the event registration.
+        <!-- WEB3FORMS ACCESS KEY -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="98e4fe18-87f1-4d96-8748-3ef54183e740"
+        >
 
-    </label>
+        <!-- Redirect after successful signup -->
+        <input
+          type="hidden"
+          name="redirect"
+          value="https://racemakers.se/success.html"
+        >
 
-  </div>
+        <!-- Optional subject -->
+        <input
+          type="hidden"
+          name="subject"
+          value="New Racemakers Signup"
+        >
 
-  <!-- SUBMIT BUTTON -->
-  <div class="form-actions">
+        <!-- Anti spam -->
+        <input
+          type="checkbox"
+          name="botcheck"
+          class="hidden"
+          style="display: none;"
+        >
 
-    <button type="submit">
-      Submit
-    </button>
 
-  </div>
+        <!-- NAME -->
+        <div class="form-field">
 
-</form>
+          <label for="name">
+            Name:
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+          >
+
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="form-field">
+
+          <label for="email">
+            Email:
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          >
+
+        </div>
+
+
+        <!-- MESSAGE -->
+        <div class="form-field">
+
+          <label for="message">
+            Message:
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+          ></textarea>
+
+        </div>
+
+
+        <!-- PUBLIC NAME -->
+        <div class="form-field">
+
+          <label for="public-name">
+            Public participant name:
+          </label>
+
+          <input
+            type="text"
+            id="public-name"
+            name="public-name"
+            placeholder="Real name or nickname"
+            required
+          >
+
+          <small>
+            This name may be shown publicly on the participants page.
+          </small>
+
+        </div>
+
+
+        <!-- GDPR -->
+        <div class="form-field">
+
+          <label>
+
+            <input
+              type="checkbox"
+              name="gdpr-consent"
+              required
+            >
+
+            I agree that Racemakers may store my submitted information
+            to manage the event registration.
+
+          </label>
+
+        </div>
+
+
+        <!-- SUBMIT BUTTON -->
+        <div class="form-actions">
+
+          <button type="submit">
+            Submit
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+
+    <!-- PRIVACY -->
+    <section class="event-section">
+
+      <h2>Privacy</h2>
+
+      <p>
+        The information you submit is only used to manage this event registration.
+      </p>
+
+      <p>
+        We do not sell or share your information with third parties.
+      </p>
+
+      <p>
+        If you want your submitted information removed,
+        contact us at:
+      </p>
+
+      <p>
+
+        <a href="mailto:racemakers@modul.slmail.me">
+          racemakers@modul.slmail.me
+        </a>
+
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- NAVIGATION -->
+  <nav>
+
+    <ul>
+
+      <li><a href="index.html#about">About</a></li>
+
+      <li><a href="index.html#rules">Rules</a></li>
+
+      <li><a href="index.html#location">Location</a></li>
+
+      <li><a href="signup.html">Sign up here</a></li>
+
+      <li><a href="participants.html">Participants</a></li>
+
+      <li><a href="index.html">Home</a></li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      See you at the race!
+    </p>
+
+  </footer>
+
+</body>
+
+</html>
