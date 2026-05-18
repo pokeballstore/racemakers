@@ -1,0 +1,129 @@
+/* CSS */
+
+/* GENERAL PAGE SETTINGS */
+
+html {
+  scroll-behavior: smooth;       /* Makes navigation links scroll smoothly */
+  scroll-padding-bottom: 80px;   /* Gives space because the nav is fixed at the bottom */ /* Fixes the fixed navigation overlap bug #woop woop*/
+}
+
+body {
+  font-family: 'Exo 2', sans-serif; /* Main website font */
+  background: #000000;              /* Makes the page background match the black in the banner */
+  color: #eee;                      /* Light text color for dark mode */
+  line-height: 1.6;                 /* Adds more spacing between text lines */
+  font-size: 22px;                  /* Text size */
+}
+
+
+/* BANNER */
+
+.flames-banner {                    /* . is the class */
+  width: 100%;                      /* Fills the width */
+  height: auto;                     /* Keeps the whole image visible */
+  display: block;                   /* Removes small unwanted space under the image */
+}
+
+@media (max-width: 600px) {         /* @ rules for different media, this is for phones */
+  .flames-banner {
+    height: auto;                   /* Keeps the full image visible on phones too */
+  }
+}
+
+
+/* HEADINGS */
+
+h1,
+h2,
+h3 {
+  font-family: 'Orbitron', sans-serif; /* Headings 1, 2 and 3 */
+  letter-spacing: 2px;                 /* Adds spacing between letters */
+}
+
+
+/* PAGE LAYOUT */
+
+main,
+header,
+footer {
+  max-width: 900px;                 /* Keeps the text from becoming too wide */
+  margin: 0 auto;                   /* Centers the content */
+  padding: 0 24px;                  /* Adds space on the sides */
+}
+
+.event-section {
+  padding: 50px 0;                  /* Adds space above and below each section */
+}
+
+
+/* NAVIGATION */
+
+nav {                               /* Fixed navigation at the bottom */
+  position: fixed;                  /* Sticks it to the screen */
+  bottom: 0;                        /* Places it at the bottom */
+  left: 0;
+  width: 100%;                      /* Full width */
+
+  background: #111;                 /* So it stands out */
+  padding: 10px 0;
+}
+
+nav ul {                            /* Targets the list inside nav */
+  display: flex;                    /* Flexbox from lesson 10 */
+  gap: 20px;                        /* Space between buttons */
+  list-style: none;                 /* Removes bullet points */
+  padding: 0;                       /* Removes default padding */
+  justify-content: center;          /* Centers the menu items */
+}
+
+nav a {                             /* Controls default browser link styling */
+  text-decoration: none;            /* Removes underline */
+  color: gold;                      /* Gold text */
+  padding: 16px 32px;               /* Creates button-like space */
+  background: #333;                 /* Dark background */
+}
+
+nav a:hover {
+  background: #555;                 /* Changes color when hovering */
+}
+
+
+/* FOOTER */
+
+footer {
+  padding-bottom: 100px;            /* Makes space so fixed nav does not cover footer */
+}
+
+footer a[href="#top"] {
+  display: inline-block;            /* Makes margin work on the link */
+  margin-top: 20px;                 /* Moves Back to top further down */
+}
+
+
+/* FORM */
+
+.signup-form {
+}
+
+.form-field {
+}
+
+.form-actions {
+}
+
+
+/* OPTIONAL MAP BUTTON */
+
+/*
+.map-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #333;
+  color: gold;
+  text-decoration: none;
+}
+
+.map-button:hover {
+  background: #555;
+}
+*/

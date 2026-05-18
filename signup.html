@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Signup</title>
+         <meta name="color-scheme" content="dark"> <!-- Is this correct place for the darkmode? -->
+         <link rel="stylesheet" href="style.css"> <!-- Tells the browser that there is a CSS sheet-->
+          <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo 2:wght@300;400;500&display=swap" rel="stylesheet">
+    </head>
+<body>
+    
+    <header>
+      <h1>Signup page</h1>
+    </header>
+        
+<main>
+    <section>
+        <h2>Sign up</h2>
+
+        <form class="signup-form" id="signup-form"> <!-- Container for the user to enter data. the id is for the javascript -->
+
+          <div class="form-field"> <!-- with the same div class it will be easy to edit all of them at the same time and keep a good structure-->
+           <label for="name">Name:</label><br> <!-- The label is to tell the browser they are connected <br> is line break-->
+           <input type="text" id="name" name="name"> <!-- Browser will now what to expect from the input-->
+          </div>
+
+
+         <div class="form-field"> <!-- with the same div class it will be easy to edit all of them at the same time and keep a good structure-->
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"> <!-- Browser will now what to expect from the input-->
+</div>
+
+
+        <div class="form-field"> <!-- with the same div class it will be easy to edit all of them at the same time and keep a good structure-->
+             <label for="message">Message:</label><br>
+             <textarea id="message" name="message"></textarea> <!-- Multi-line answer box-->
+        </div>
+
+<div class="form-actions">
+  <button type="submit">Submit</button> <!-- Just a structure for now, backend will be implemented-->
+</div>
+        </form>
+    </section>
+
+    
+        
+        <nav>
+           <ul>
+                 
+               <li><a href="index.html#about">About</a></li> <!-- Changed so href is linking to the correct document -->
+                 <li><a href="index.html#rules">Rules</a></li> <!-- Otherwise it is searching inisde this document for "Rules" -->
+                 <li><a href="index.html#location">Location</a></li>                                          
+                 <li><a href="signup.html">Sign up here</a></li> 
+                 <li><a href="participants.html">Participants</a></li>
+                 <li><a href="index.html">Home</a></li>
+           </ul>
+
+        </nav>
+    
+ <footer>
+    <p>Let se goo Mario</p>
+ </footer>
+
+<script> //AI genereated code
+const form = document.getElementById("signup-form");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+
+
+  let participants = JSON.parse(localStorage.getItem("participants")) || [];
+
+
+  participants.push(name);
+
+  localStorage.setItem("participants", JSON.stringify(participants));
+
+  console.log("Saved list:", participants);
+
+
+  setTimeout(function() {
+  window.location.href = "participants.html";
+}, 100); // maybe this will fix bug nr 7
+});
+</script>
+
+</body>
+</html>

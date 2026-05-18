@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Participants</title>
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo 2:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <h1>Participants</h1>
+  <p>People signed up for the event</p>
+</header>
+
+<main>
+  <section class="event-section">
+    <h2>Participant List</h2>
+
+    <ul class="participants-list" id="participants-list">
+      <!-- JavaScript will fill this -->
+    </ul>
+
+  </section>
+</main>
+
+       <nav>
+           <ul>
+                 
+                <li><a href="index.html#about">About</a></li> <!-- Changed so href is linking to the correct document -->
+                 <li><a href="index.html#rules">Rules</a></li> <!-- Otherwise it is searching inisde this document for "Rules" -->
+                 <li><a href="index.html#location">Location</a></li>                                          
+                 <li><a href="signup.html">Sign up here</a></li> 
+                 <li><a href="participants.html">Participants</a></li>
+                 <li><a href="index.html">Home</a></li>
+           </ul>
+
+        </nav>
+
+<footer>
+  <p>Data stored locally in browser</p>
+</footer>
+
+<script>
+const list = document.getElementById("participants-list");
+const rawParticipants = localStorage.getItem("participants");
+
+console.log("Raw from localStorage:", rawParticipants);
+
+const participants = JSON.parse(rawParticipants) || [];
+
+console.log("Parsed participants:", participants);
+
+list.innerHTML = "";
+
+participants.forEach(function(name) {
+  const li = document.createElement("li");
+  li.textContent = name;
+  list.appendChild(li);
+});
+</script>
+
+</body>
+</html>
