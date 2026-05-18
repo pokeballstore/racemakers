@@ -3,7 +3,7 @@
 ========================= */
 
 
-/* GENERAL SETTINGS */
+/* GLOBAL SETTINGS */
 
 * {
   box-sizing: border-box;
@@ -16,13 +16,14 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: 90px;
 
   background: #000000;
   color: #eeeeee;
 
   font-family: 'Exo 2', sans-serif;
   font-size: 21px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 
@@ -37,22 +38,37 @@ body {
 }
 
 
-/* HEADINGS */
+/* TYPOGRAPHY */
 
 h1,
 h2,
 h3 {
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
+
   color: #ffffff;
+
+  font-weight: 700;
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
+  margin-bottom: 28px;
 }
 
 h2 {
-  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 28px;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+button,
+a {
+  font-family: 'Exo 2', sans-serif;
 }
 
 
@@ -60,111 +76,39 @@ h2 {
 
 main,
 header,
-footer {
+footer,
+.contact-section {
   max-width: 900px;
+
   margin: 0 auto;
-  padding: 0 24px;
+
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 header {
-  padding-top: 30px;
-  padding-bottom: 20px;
+  padding-top: 36px;
+  padding-bottom: 50px;
 }
 
 .event-section {
-  padding: 44px 0;
+  padding-top: 52px;
+  padding-bottom: 52px;
 }
 
 
-/* BOXES */
+/* CONTENT BOXES */
 
 .rules-box,
-.signup-form {
-  background: rgba(15, 15, 15, 0.95);
+.signup-form,
+.highlight-box {
+  background: rgba(15, 15, 15, 0.92);
 
   border-left: 4px solid #d4a017;
+
   border-radius: 0 12px 12px 0;
 
-  padding: 24px;
-}
-
-
-/* NAVIGATION BAR */
-
-nav {
-  position: sticky;
-  bottom: 0;
-  z-index: 999;
-
-  background: rgba(10, 10, 10, 0.95);
-  border-top: 2px solid #d4a017;
-  backdrop-filter: blur(10px);
-
-  padding: 8px 0;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 12px;
-
-  list-style: none;
-  margin: 0;
-  padding: 0 12px;
-
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-
-  font-family: 'Exo 2', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  padding: 6px 10px;
-
-  border-radius: 8px;
-  transition: 0.2s ease;
-}
-
-nav a:hover {
-  background: rgba(212, 160, 23, 0.15);
-  color: #ffffff;
-}
-
-
-/* BUTTONS */
-
-.map-button,
-.signup-form button {
-  display: inline-block;
-
-  font-family: 'Exo 2', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-
-  background: rgba(10, 10, 10, 0.92);
-  color: #ffffff;
-
-  text-decoration: none;
-
-  border: 1px solid rgba(212, 160, 23, 0.8);
-  border-radius: 8px;
-
-  padding: 10px 18px;
-
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.map-button:hover,
-.signup-form button:hover {
-  background: rgba(212, 160, 23, 0.15);
-  color: #ffffff;
+  padding: 28px;
 }
 
 
@@ -172,10 +116,89 @@ nav a:hover {
 
 a {
   color: #f7c948;
+  transition: 0.2s ease;
 }
 
 a:hover {
   color: #ffffff;
+}
+
+
+/* HERO BUTTONS */
+
+.map-button,
+.hero-button {
+  display: inline-block;
+
+  color: #ffffff;
+  background: transparent;
+
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  border: none;
+  border-bottom: 2px solid #d4a017;
+
+  padding: 8px 0;
+
+  transition: 0.2s ease;
+}
+
+.map-button:hover,
+.hero-button:hover {
+  color: #f7c948;
+}
+
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  bottom: 0;
+  z-index: 999;
+
+  background: rgba(10, 10, 10, 0.96);
+
+  border-top: 2px solid #d4a017;
+
+  backdrop-filter: blur(10px);
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+nav ul {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 34px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0 18px;
+
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: #f7c948;
 }
 
 
@@ -186,34 +209,40 @@ a:hover {
 }
 
 .form-field {
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .signup-form label {
   display: block;
+
   margin-bottom: 8px;
+
   color: #ffffff;
 }
 
 .signup-form small {
   display: block;
-  margin-top: 6px;
+
+  margin-top: 8px;
+
   color: #bbbbbb;
+
+  font-size: 0.9rem;
 }
 
 .signup-form input,
 .signup-form textarea {
   width: 100%;
 
-  padding: 12px;
-
-  font: inherit;
+  padding: 14px;
 
   background: #080808;
   color: #ffffff;
 
-  border: 1px solid rgba(212, 160, 23, 0.45);
+  border: 1px solid rgba(212, 160, 23, 0.35);
   border-radius: 10px;
+
+  font: inherit;
 }
 
 .signup-form input:focus,
@@ -221,7 +250,8 @@ a:hover {
   outline: none;
 
   border-color: #f7c948;
-  box-shadow: 0 0 12px rgba(212, 160, 23, 0.25);
+
+  box-shadow: 0 0 10px rgba(212, 160, 23, 0.15);
 }
 
 .signup-form textarea {
@@ -230,37 +260,97 @@ a:hover {
 
 .signup-form input[type="checkbox"] {
   width: auto;
+
   margin-right: 10px;
 }
 
+
+/* FORM BUTTON */
+
 .signup-form button {
   width: 100%;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  border: 1px solid #d4a017;
+  border-radius: 8px;
+
+  padding: 12px 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.signup-form button:hover {
+  background: rgba(212, 160, 23, 0.14);
+}
+
+
+/* CONTACT SECTION */
+
+.contact-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  text-align: center;
+
+  color: #bbbbbb;
+}
+
+.contact-section a {
+  color: #f7c948;
+}
+
+.contact-section a:hover {
+  color: #ffffff;
 }
 
 
 /* FOOTER */
 
 footer {
-  padding-top: 30px;
-  padding-bottom: 180px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
   text-align: center;
-  color: #bbbbbb;
+
+  color: #777777;
+
+  font-size: 0.9rem;
 }
 
 footer address {
   font-style: normal;
 }
 
-footer a {
-  color: #f7c948;
 
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1rem;
+/* COURSE IMAGE */
+
+.track-map {
+  width: 100%;
+  max-width: 700px;
+
+  border-radius: 14px;
+
+  border: 2px solid #d4a017;
+
+  display: block;
+
+  margin-top: 24px;
 }
 
-footer a:hover {
-  color: #ffffff;
+.map-caption {
+  margin-top: 12px;
+
+  color: #aaaaaa;
+
+  font-size: 0.9rem;
 }
 
 
@@ -270,9 +360,14 @@ footer a:hover {
 
   body {
     font-size: 18px;
+    padding-bottom: 110px;
   }
 
   h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
     font-size: 1.7rem;
   }
 
@@ -282,26 +377,37 @@ footer a:hover {
 
   main,
   header,
-  footer {
-    padding: 0 18px;
+  footer,
+  .contact-section {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .event-section {
-    padding: 32px 0;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
 
   .rules-box,
-  .signup-form {
-    padding: 20px;
+  .signup-form,
+  .highlight-box {
+    padding: 22px;
+  }
+
+  nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  nav ul {
+    gap: 18px;
   }
 
   nav a {
     font-size: 0.85rem;
-    padding: 6px 9px;
   }
 
-  .map-button,
-  .signup-form button {
-    font-size: 0.9rem;
+  .contact-section {
+    padding-bottom: 80px;
   }
 }
