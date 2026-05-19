@@ -33,7 +33,7 @@
   <meta name="author" content="Racemakers">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 
   <!-- Google Fonts -->
   <link
@@ -48,7 +48,7 @@
   <!-- Top banner -->
   <img
     class="flames-banner"
-    src="banner.webp"
+    src="/banner.webp"
     alt="Racemakers event banner with flames"
   >
 
@@ -87,45 +87,6 @@
     </section>
 
 
-    <!-- MESSAGEBOARD -->
-    <section id="messageboard" class="event-section">
-
-      <h2>Write a message</h2>
-
-      <p>
-        Write a short message, question or comment.
-      </p>
-
-      <div class="messageboard-form">
-
-        <label for="name">
-          Name
-        </label>
-
-        <input
-          type="text"
-          id="name"
-          placeholder="Write your name or nickname"
-          maxlength="40"
-        >
-
-        <label for="message">
-          Message
-        </label>
-
-        <textarea
-          id="message"
-          placeholder="Write your message"
-          maxlength="500"
-        ></textarea>
-
-        <button onclick="postMessage()">
-          Send message
-        </button>
-
-      </div>
-
-    </section>
 
 
     <!-- MESSAGES -->
@@ -144,6 +105,54 @@
         <p>
           Loading messages...
         </p>
+      </div>
+
+    </section>
+
+
+
+    <!-- MESSAGEBOARD -->
+    <section id="messageboard" class="event-section">
+
+      <h2>Write a message</h2>
+
+      <p>
+        Write a short message, question or comment.
+      </p>
+
+      <div class="messageboard-form">
+
+        <label for="name">
+          Name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Write your name or nickname"
+          maxlength="40"
+          autocomplete="name"
+        >
+
+        <label for="message">
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write your message"
+          maxlength="500"
+        ></textarea>
+
+        <button
+          type="button"
+          id="post-message-button"
+        >
+          Send message
+        </button>
+
       </div>
 
     </section>
@@ -194,27 +203,59 @@
 
 
   <!-- NAVIGATION -->
-<nav>
-  <ul>
+  <nav>
+    <ul>
 
-    <li><a href="/en/">Home</a></li>
+      <li>
+        <a href="/en/">
+          Home
+        </a>
+      </li>
 
-    <li><a href="/en/#location">Location</a></li>
+      <li>
+        <a href="/en/#location">
+          Location
+        </a>
+      </li>
 
-    <li><a href="/en/#course">Course</a></li>
+      <li>
+        <a href="/en/#course">
+          Course
+        </a>
+      </li>
 
-    <li><a href="/en/#rules">Rules</a></li>
+      <li>
+        <a href="/en/#rules">
+          Rules
+        </a>
+      </li>
 
-    <li><a href="/en/signup/">Sign up</a></li>
+      <li>
+        <a href="/en/signup/">
+          Sign up
+        </a>
+      </li>
 
-    <li><a href="/en/messageboard/">Messageboard</a></li>
+      <li>
+        <a href="/en/messageboard/">
+          Messageboard
+        </a>
+      </li>
 
-    <li><a href="/en/about-racemakers/">About Racemakers</a></li>
+      <li>
+        <a href="/en/about-racemakers/">
+          About Racemakers
+        </a>
+      </li>
 
-    <li><a href="/anslagstavla/">🇸🇪 Svenska</a></li>
+      <li>
+        <a href="/anslagstavla/">
+          🇸🇪 Svenska
+        </a>
+      </li>
 
-  </ul>
-</nav>
+    </ul>
+  </nav>
 
 
   <!-- FOOTER -->
@@ -245,11 +286,30 @@
     const supabase =
       createClient(supabaseUrl, supabaseKey)
 
+    const nameInput =
+      document.getElementById('name')
+
+    const messageInput =
+      document.getElementById('message')
+
+    const messagesContainer =
+      document.getElementById('messages')
+
+    const postMessageButton =
+      document.getElementById('post-message-button')
+
+
     function cleanText(text) {
-      return text
+
+      return String(text)
+        .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')
         .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;')
+
     }
+
 
     async function loadMessages() {
 
@@ -259,24 +319,29 @@
           .select('*')
           .order('created_at', { ascending: false })
 
-      const container =
-        document.getElementById('messages')
-
-      container.innerHTML = ''
+      messagesContainer.innerHTML = ''
 
       if (error) {
-        container.innerHTML = '<p>Could not load messages.</p>'
+
+        messagesContainer.innerHTML =
+          '<p>Could not load messages.</p>'
+
         return
+
       }
 
-      if (data.length === 0) {
-        container.innerHTML = '<p>No messages yet.</p>'
+      if (!data || data.length === 0) {
+
+        messagesContainer.innerHTML =
+          '<p>No messages yet.</p>'
+
         return
+
       }
 
-      data.forEach(msg => {
+      data.forEach(function (msg) {
 
-        container.innerHTML += `
+        messagesContainer.innerHTML += `
 
           <article class="message">
 
@@ -300,35 +365,53 @@
 
     }
 
+
     async function postMessage() {
 
       const name =
-        document.getElementById('name').value.trim()
+        nameInput.value.trim()
 
       const message =
-        document.getElementById('message').value.trim()
+        messageInput.value.trim()
 
       if (!name || !message) {
+
         alert('Please fill in both name and message.')
         return
+
       }
 
-      await supabase
-        .from('messages')
-        .insert([
-          {
-            name: name,
-            message: message
-          }
-        ])
+      postMessageButton.disabled = true
+      postMessageButton.textContent = 'Sending...'
 
-      document.getElementById('message').value = ''
+      const { error } =
+        await supabase
+          .from('messages')
+          .insert([
+            {
+              name: name,
+              message: message
+            }
+          ])
+
+      postMessageButton.disabled = false
+      postMessageButton.textContent = 'Send message'
+
+      if (error) {
+
+        alert('The message could not be sent right now.')
+        return
+
+      }
+
+      messageInput.value = ''
 
       loadMessages()
 
     }
 
-    window.postMessage = postMessage
+
+    postMessageButton.addEventListener('click', postMessage)
 
     loadMessages()
 
