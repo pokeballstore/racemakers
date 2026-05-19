@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="color-scheme" content="dark">
+
+  <title>Messageboard | Racemakers</title>
+
+  <meta
+    name="description"
+    content="Racemakers messageboard för lokala meddelanden, frågor och kommentarer."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <img
+    src="images/flames-banner.png"
+    alt="Racemakers flames banner"
+    class="flames-banner"
+  >
+
+  <header>
+    <h1>Messageboard</h1>
+
+    <p>
+      Skriv ett meddelande till Racemakers-communityn.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="event-section">
+
+      <div class="messageboard-form">
+
+        <label for="name">Namn</label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Skriv ditt namn"
+          maxlength="40"
+        >
+
+        <label for="message">Meddelande</label>
+
+        <textarea
+          id="message"
+          placeholder="Skriv ditt meddelande"
+          maxlength="500"
+        ></textarea>
+
+        <button onclick="postMessage()">
+          Skicka meddelande
+        </button>
+
+      </div>
+
+    </section>
+
+    <section class="event-section">
+
+      <h2>Meddelanden</h2>
+
+      <div id="messages" class="messageboard-list"></div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Racemakers
+    </p>
+  </footer>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="index.html#location">Plats</a></li>
+      <li><a href="signup.html">Anmälan</a></li>
+      <li><a href="participants.html">Deltagare</a></li>
+      <li><a href="messageboard.html">Messageboard</a></li>
+    </ul>
+  </nav>
+
+  <script type="module">
+
+    import { createClient }
+      from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+    const supabaseUrl =
+      'https://ckjjihrianqiywexpfmg.supabase.co'
+
+    const supabaseKey =
+      'sb_publishable_Mrvp5OElB3wCX2eI5xT2uA_ibu8Ik3L'
+
+    const supabase =
+      createClient(supabaseUrl, supabaseKey)
+
+    function cleanText(text) {
+      return text
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+    }
+
+    async function loadMessages() {
+
+      const { data, error } =
+        await supabase
+          .from('messages')
+          .select('*')
+          .order('created_at', { ascending: false })
+
+      const container =
+        document.getElementById('messages')
+
+      container.innerHTML = ''
+
+      if (error) {
+        container.innerHTML = '<p>Could not load messages.</p>'
+        return
+      }
+
+      if (data.length === 0) {
+        container.innerHTML = '<p>No messages yet.</p>'
+        return
+      }
+
+      data.forEach(msg => {
+
+        container.innerHTML += `
+
+          <article class="message">
+
+            <h3 class="name">
+              ${cleanText(msg.name)}
+            </h3>
+
+            <p>
+              ${cleanText(msg.message)}
+            </p>
+
+            <p class="date">
+              ${new Date(msg.created_at).toLocaleString('sv-SE')}
+            </p>
+
+          </article>
+
+        `
+
+      })
+
+    }
+
+    async function postMessage() {
+
+      const name =
+        document.getElementById('name').value.trim()
+
+      const message =
+        document.getElementById('message').value.trim()
+
+      if (!name || !message) {
+        alert('Fyll i både namn och meddelande.')
+        return
+      }
+
+      await supabase
+        .from('messages')
+        .insert([
+          {
+            name: name,
+            message: message
+          }
+        ])
+
+      document.getElementById('message').value = ''
+
+      loadMessages()
+
+    }
+
+    window.postMessage = postMessage
+
+    loadMessages()
+
+  </script>
+
+</body>
+
+</html>
