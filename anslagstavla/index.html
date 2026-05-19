@@ -33,7 +33,7 @@
   <meta name="author" content="Racemakers">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 
   <!-- Google Fonts -->
   <link
@@ -48,7 +48,7 @@
   <!-- Toppbanner -->
   <img
     class="flames-banner"
-    src="banner.webp"
+    src="/banner.webp"
     alt="Racemakers eventbanner med eld"
   >
 
@@ -57,7 +57,6 @@
   <header id="top">
 
     <h1>Anslagstavla</h1>
-
 
   </header>
 
@@ -106,8 +105,10 @@
         <input
           type="text"
           id="name"
+          name="name"
           placeholder="Skriv ditt namn eller smeknamn"
           maxlength="40"
+          autocomplete="name"
         >
 
         <label for="message">
@@ -116,11 +117,15 @@
 
         <textarea
           id="message"
+          name="message"
           placeholder="Skriv ditt meddelande"
           maxlength="500"
         ></textarea>
 
-        <button onclick="postMessage()">
+        <button
+          type="button"
+          id="post-message-button"
+        >
           Skicka meddelande
         </button>
 
@@ -195,27 +200,59 @@
 
 
   <!-- NAVIGATION -->
-<nav>
-  <ul>
+  <nav>
+    <ul>
 
-    <li><a href="/">Hem</a></li>
+      <li>
+        <a href="/">
+          Hem
+        </a>
+      </li>
 
-    <li><a href="/#location">Plats</a></li>
+      <li>
+        <a href="/#location">
+          Plats
+        </a>
+      </li>
 
-    <li><a href="/#course">Banan</a></li>
+      <li>
+        <a href="/#course">
+          Banan
+        </a>
+      </li>
 
-    <li><a href="/#rules">Regler</a></li>
+      <li>
+        <a href="/#rules">
+          Regler
+        </a>
+      </li>
 
-    <li><a href="/anmalan/">Anmälan</a></li>
+      <li>
+        <a href="/anmalan/">
+          Anmälan
+        </a>
+      </li>
 
-    <li><a href="/anslagstavla/">Anslagstavla</a></li>
+      <li>
+        <a href="/anslagstavla/">
+          Anslagstavla
+        </a>
+      </li>
 
-    <li><a href="/om-racemakers/">Om Racemakers</a></li>
+      <li>
+        <a href="/om-racemakers/">
+          Om Racemakers
+        </a>
+      </li>
 
-    <li><a href="/en/messageboard/">🇬🇧 English</a></li>
+      <li>
+        <a href="/en/messageboard/">
+          🇬🇧 English
+        </a>
+      </li>
 
-  </ul>
-</nav>
+    </ul>
+  </nav>
 
 
   <!-- FOOTER -->
@@ -246,11 +283,30 @@
     const supabase =
       createClient(supabaseUrl, supabaseKey)
 
+    const nameInput =
+      document.getElementById('name')
+
+    const messageInput =
+      document.getElementById('message')
+
+    const messagesContainer =
+      document.getElementById('messages')
+
+    const postMessageButton =
+      document.getElementById('post-message-button')
+
+
     function cleanText(text) {
-      return text
+
+      return String(text)
+        .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')
         .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;')
+
     }
+
 
     async function loadMessages() {
 
@@ -260,24 +316,29 @@
           .select('*')
           .order('created_at', { ascending: false })
 
-      const container =
-        document.getElementById('messages')
-
-      container.innerHTML = ''
+      messagesContainer.innerHTML = ''
 
       if (error) {
-        container.innerHTML = '<p>Kunde inte ladda meddelanden.</p>'
+
+        messagesContainer.innerHTML =
+          '<p>Kunde inte ladda meddelanden.</p>'
+
         return
+
       }
 
-      if (data.length === 0) {
-        container.innerHTML = '<p>Inga meddelanden ännu.</p>'
+      if (!data || data.length === 0) {
+
+        messagesContainer.innerHTML =
+          '<p>Inga meddelanden ännu.</p>'
+
         return
+
       }
 
-      data.forEach(msg => {
+      data.forEach(function (msg) {
 
-        container.innerHTML += `
+        messagesContainer.innerHTML += `
 
           <article class="message">
 
@@ -301,35 +362,53 @@
 
     }
 
+
     async function postMessage() {
 
       const name =
-        document.getElementById('name').value.trim()
+        nameInput.value.trim()
 
       const message =
-        document.getElementById('message').value.trim()
+        messageInput.value.trim()
 
       if (!name || !message) {
+
         alert('Fyll i både namn och meddelande.')
         return
+
       }
 
-      await supabase
-        .from('messages')
-        .insert([
-          {
-            name: name,
-            message: message
-          }
-        ])
+      postMessageButton.disabled = true
+      postMessageButton.textContent = 'Skickar...'
 
-      document.getElementById('message').value = ''
+      const { error } =
+        await supabase
+          .from('messages')
+          .insert([
+            {
+              name: name,
+              message: message
+            }
+          ])
+
+      postMessageButton.disabled = false
+      postMessageButton.textContent = 'Skicka meddelande'
+
+      if (error) {
+
+        alert('Meddelandet kunde inte skickas just nu.')
+        return
+
+      }
+
+      messageInput.value = ''
 
       loadMessages()
 
     }
 
-    window.postMessage = postMessage
+
+    postMessageButton.addEventListener('click', postMessage)
 
     loadMessages()
 

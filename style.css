@@ -18,6 +18,8 @@ body {
   margin: 0;
   padding-bottom: 90px;
 
+  overflow-wrap: break-word;
+
   background: #000000;
   color: #eeeeee;
 
@@ -123,6 +125,14 @@ a:hover {
   color: #ffffff;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #f7c948;
+  outline-offset: 3px;
+}
+
 
 /* HERO BUTTONS */
 
@@ -152,6 +162,7 @@ a:hover {
   color: #f7c948;
 }
 
+
 /* COURSE IMAGE */
 
 .course-image {
@@ -177,11 +188,10 @@ a:hover {
   transition: 0.3s ease;
 }
 
-
-/* Optional slight hover effect */
 .course-image:hover {
   opacity: 0.92;
 }
+
 
 /* NAVIGATION */
 
@@ -360,7 +370,7 @@ footer address {
 }
 
 
-/* COURSE IMAGE */
+/* TRACK MAP */
 
 .track-map {
   width: 100%;
@@ -384,67 +394,10 @@ footer address {
 }
 
 
-/* MOBILE SETTINGS */
-
-@media (max-width: 600px) {
-
-  body {
-    font-size: 18px;
-    padding-bottom: 110px;
-  }
-
-  h1 {
-    font-size: 1.9rem;
-  }
-
-  h2 {
-    font-size: 1.7rem;
-  }
-
-  .flames-banner {
-    height: auto;
-  }
-
-  main,
-  header,
-  footer,
-  .contact-section {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .event-section {
-    padding-top: 36px;
-    padding-bottom: 36px;
-  }
-
-  .rules-box,
-  .signup-form,
-  .highlight-box {
-    padding: 22px;
-  }
-
-  nav {
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-
-  nav ul {
-    gap: 18px;
-  }
-
-  nav a {
-    font-size: 0.85rem;
-  }
-
-  .contact-section {
-    padding-bottom: 80px;
-  }
-}
-
 /* MESSAGEBOARD / ANSLAGSTAVLA */
 
-.messageboard-form {
+.messageboard-form,
+.messageboard-list {
   background: rgba(10, 10, 10, 0.92);
 
   border-left: 4px solid #d4a017;
@@ -470,8 +423,6 @@ footer address {
 .messageboard-form input,
 .messageboard-form textarea {
   width: 100%;
-
-  box-sizing: border-box;
 
   padding: 14px 16px;
 
@@ -536,20 +487,7 @@ footer address {
 }
 
 
-/* MEDDELANDEN */
-
-.messageboard-list {
-  background: rgba(10, 10, 10, 0.92);
-
-  border-left: 4px solid #d4a017;
-  border-radius: 0 14px 14px 0;
-
-  padding: 28px;
-
-  margin-top: 24px;
-
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-}
+/* MESSAGES */
 
 .messageboard-list > p {
   margin: 0;
@@ -598,7 +536,7 @@ footer address {
 }
 
 
-/* DELTAGARLISTA */
+/* PARTICIPANTS */
 
 .participants-list {
   padding-left: 0;
@@ -625,7 +563,7 @@ footer address {
 }
 
 
-/* LITE EXTRA FÖR ANSLAGSTAVLAN */
+/* EXTRA PAGE SPACING */
 
 #messageboard p,
 #messages-section p,
@@ -634,23 +572,50 @@ footer address {
   line-height: 1.7;
 }
 
-#messages-section {
-  margin-top: 40px;
-}
-
-#participants {
-  margin-top: 40px;
-}
-
+#messages-section,
+#participants,
 #privacy {
   margin-top: 40px;
 }
 
 
-/* MOBILANPASSNING */
+/* MOBILE SETTINGS */
 
 @media (max-width: 700px) {
 
+  body {
+    font-size: 18px;
+    padding-bottom: 110px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .flames-banner {
+    height: auto;
+  }
+
+  main,
+  header,
+  footer,
+  .contact-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .event-section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .rules-box,
+  .signup-form,
+  .highlight-box,
   .messageboard-form,
   .messageboard-list {
     padding: 22px;
@@ -661,6 +626,19 @@ footer address {
     border-radius: 0 0 14px 14px;
   }
 
+  nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  nav ul {
+    gap: 18px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
   .message {
     padding: 18px;
   }
@@ -669,4 +647,7 @@ footer address {
     padding: 14px 18px;
   }
 
+  .contact-section {
+    padding-bottom: 80px;
+  }
 }
