@@ -1,165 +1,236 @@
+<!-- Final English messageboard page for Racemakers. -->
 <!DOCTYPE html>
-<html lang="sv">
+
+<html lang="en">
 
 <head>
+
+  <!-- Basic page information -->
   <meta charset="UTF-8">
-  <meta name="color-scheme" content="dark">
+
+  <!-- Makes the page work well on phones and tablets -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Deltagare & Messageboard | Racemakers</title>
+  <!-- The page is designed for dark mode -->
+  <meta name="color-scheme" content="dark">
 
+  <!-- Browser tab title -->
+  <title>Messageboard | Racemakers</title>
+
+  <!-- Search engine description -->
   <meta
     name="description"
-    content="Offentlig deltagarlista och messageboard för Racemakers sprinttävling i Skövde."
+    content="Messageboard and public participant list for the Racemakers sprint race in Skövde."
   >
 
+  <!-- Search keywords -->
+  <meta
+    name="keywords"
+    content="Racemakers, messageboard, participants, sprint race, time trial, Skövde, Käpplunda, community event"
+  >
+
+  <!-- Page author -->
+  <meta name="author" content="Racemakers">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap"
     rel="stylesheet"
   >
+
 </head>
 
 <body>
 
+  <!-- Top banner -->
   <img
     class="flames-banner"
     src="banner.webp"
-    alt="Racemakers eld-banner"
+    alt="Racemakers event banner with flames"
   >
 
-  <header id="top">
-    <h1>Deltagare & Messageboard</h1>
 
-    <p>
-      Se offentliga deltagarnamn och skriv ett meddelande till Racemakers-communityn.
-    </p>
+  <!-- HERO / HEADER -->
+  <header id="top">
+
+    <h1>Messageboard</h1>
+
   </header>
 
+
+  <!-- MAIN CONTENT -->
   <main>
 
-    <section class="event-section" id="participants">
-      <h2>Deltagarlista</h2>
+    <!-- GOOD TO KNOW -->
+    <section id="about" class="event-section">
+
+      <h2>Good to know</h2>
 
       <p>
-        Endast det offentliga namn som valdes vid anmälan visas här.
-        E-postadresser och privata meddelanden publiceras inte.
+        Here participants can write messages, ask questions
+        or leave a comment for the Racemakers community.
       </p>
-
-      <div class="rules-box">
-        <ul class="participants-list">
-          <li>Inga offentliga deltagare har lagts till ännu.</li>
-        </ul>
-      </div>
 
       <p>
-        Deltagarnamn uppdateras manuellt efter att anmälan har godkänts.
+        The messageboard is public. Do not write phone numbers,
+        email addresses, home addresses or other private information.
       </p>
+
+      <p>
+        The participant list only shows names or nicknames that people
+        have chosen to make public.
+      </p>
+
     </section>
 
-    <section class="event-section" id="messageboard">
-      <h2>Messageboard</h2>
+
+    <!-- MESSAGEBOARD -->
+    <section id="messageboard" class="event-section">
+
+      <h2>Write a message</h2>
 
       <p>
-        Skriv ett meddelande, en fråga eller en kommentar.
+        Write a short message, question or comment.
       </p>
 
       <div class="messageboard-form">
 
-        <label for="name">Namn</label>
+        <label for="name">
+          Name
+        </label>
 
         <input
           type="text"
           id="name"
-          placeholder="Skriv ditt namn"
+          placeholder="Write your name or nickname"
           maxlength="40"
         >
 
-        <label for="message">Meddelande</label>
+        <label for="message">
+          Message
+        </label>
 
         <textarea
           id="message"
-          placeholder="Skriv ditt meddelande"
+          placeholder="Write your message"
           maxlength="500"
         ></textarea>
 
         <button onclick="postMessage()">
-          Skicka meddelande
+          Send message
         </button>
 
       </div>
+
     </section>
 
-    <section class="event-section">
-      <h2>Meddelanden</h2>
 
-      <div id="messages" class="messageboard-list"></div>
-    </section>
+    <!-- MESSAGES -->
+    <section id="messages-section" class="event-section">
 
-    <section class="event-section" id="privacy">
-      <h2>Integritet</h2>
+      <h2>Messages</h2>
 
       <p>
-        För att skydda integriteten visas endast det namn eller smeknamn
-        som personen själv valt att göra offentligt.
+        The latest messages from the messageboard are shown here.
+      </p>
+
+      <div
+        id="messages"
+        class="messageboard-list"
+      >
+        <p>
+          Loading messages...
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- PARTICIPANTS -->
+    <section id="participants" class="event-section">
+
+      <h2>Participants</h2>
+
+      <p>
+        Public participant names are shown here after registration has been approved.
+      </p>
+
+      <div class="rules-box">
+
+        <ul class="participants-list">
+          <li>No public participants have been added yet.</li>
+        </ul>
+
+      </div>
+
+      <p>
+        Participant names are updated manually.
+      </p>
+
+    </section>
+
+
+    <!-- PRIVACY -->
+    <section id="privacy" class="event-section">
+
+      <h2>Privacy</h2>
+
+      <p>
+        To protect participants' privacy, email addresses,
+        private messages and other sensitive information are not shown.
       </p>
 
       <p>
-        Skriv inte privata uppgifter, telefonnummer eller känslig information
-        i messageboarden.
+        Only write information that you are comfortable showing
+        publicly on the page.
       </p>
-    </section>
 
-    <section class="event-section">
-      <p>
-        <a href="signup.html" class="map-button">
-          Gå till anmälningssidan
-        </a>
-      </p>
     </section>
 
   </main>
 
-  <!-- NAVIGATION -->
 
+  <!-- NAVIGATION -->
 <nav>
   <ul>
 
     <li><a href="/en/">Home</a></li>
 
-    <li><a href="/#about">About</a></li>
+    <li><a href="/en/#location">Location</a></li>
 
-    <li><a href="/#course">Course</a></li>
+    <li><a href="/en/#course">Course</a></li>
 
-    <li><a href="/#rules">Rules</a></li>
+    <li><a href="/en/#rules">Rules</a></li>
 
-    <li><a href="/#location">Location</a></li>
+    <li><a href="/en/signup/">Sign up</a></li>
 
-    <li><a href="/signup/">Sign up</a></li>
+    <li><a href="/en/messageboard/">Messageboard</a></li>
 
-    <li><a href="/participants/">Participants</a></li>
-
-    <li><a href="/about-racemakers/">Racemakers</a></li>
+    <li><a href="/en/about-racemakers/">About Racemakers</a></li>
 
     <li><a href="/anslagstavla/">🇸🇪 Svenska</a></li>
 
   </ul>
 </nav>
 
+
+  <!-- FOOTER -->
   <footer>
+
     <address>
-      Kontakt:
+      Contact:
       <a href="mailto:racemakers@modul.slmail.me">
         racemakers@modul.slmail.me
       </a>
     </address>
 
-    <p>
-      Racemakers Community Project
-    </p>
   </footer>
 
+
+  <!-- SUPABASE MESSAGEBOARD -->
   <script type="module">
 
     import { createClient }
@@ -194,12 +265,12 @@
       container.innerHTML = ''
 
       if (error) {
-        container.innerHTML = '<p>Kunde inte ladda meddelanden.</p>'
+        container.innerHTML = '<p>Could not load messages.</p>'
         return
       }
 
       if (data.length === 0) {
-        container.innerHTML = '<p>Inga meddelanden ännu.</p>'
+        container.innerHTML = '<p>No messages yet.</p>'
         return
       }
 
@@ -218,7 +289,7 @@
             </p>
 
             <p class="date">
-              ${new Date(msg.created_at).toLocaleString('sv-SE')}
+              ${new Date(msg.created_at).toLocaleString('en-GB')}
             </p>
 
           </article>
@@ -238,7 +309,7 @@
         document.getElementById('message').value.trim()
 
       if (!name || !message) {
-        alert('Fyll i både namn och meddelande.')
+        alert('Please fill in both name and message.')
         return
       }
 
