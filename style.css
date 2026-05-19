@@ -442,19 +442,19 @@ footer address {
   }
 }
 
-/* MESSAGEBOARD */
+/* MESSAGEBOARD / ANSLAGSTAVLA */
 
-.messageboard-form,
-.messageboard-list {
-  background: rgba(15, 15, 15, 0.92);
+.messageboard-form {
+  background: rgba(10, 10, 10, 0.92);
 
   border-left: 4px solid #d4a017;
-
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 14px 14px 0;
 
   padding: 28px;
 
-  margin-top: 28px;
+  margin-top: 24px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
 
 .messageboard-form label {
@@ -463,13 +463,17 @@ footer address {
   margin-bottom: 8px;
 
   color: #ffffff;
+
+  font-weight: 500;
 }
 
 .messageboard-form input,
 .messageboard-form textarea {
   width: 100%;
 
-  padding: 14px;
+  box-sizing: border-box;
+
+  padding: 14px 16px;
 
   margin-bottom: 22px;
 
@@ -479,7 +483,15 @@ footer address {
   border: 1px solid rgba(212, 160, 23, 0.35);
   border-radius: 10px;
 
-  font: inherit;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+
+  transition: 0.2s ease;
+}
+
+.messageboard-form input::placeholder,
+.messageboard-form textarea::placeholder {
+  color: #777777;
 }
 
 .messageboard-form input:focus,
@@ -488,11 +500,11 @@ footer address {
 
   border-color: #f7c948;
 
-  box-shadow: 0 0 10px rgba(212, 160, 23, 0.15);
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.22);
 }
 
 .messageboard-form textarea {
-  min-height: 140px;
+  min-height: 145px;
 
   resize: vertical;
 }
@@ -504,13 +516,13 @@ footer address {
   color: #ffffff;
 
   font-family: 'Exo 2', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
 
   border: 1px solid #d4a017;
   border-radius: 8px;
 
-  padding: 12px 18px;
+  padding: 13px 20px;
 
   cursor: pointer;
 
@@ -519,17 +531,45 @@ footer address {
 
 .messageboard-form button:hover {
   background: rgba(212, 160, 23, 0.14);
+
+  transform: translateY(-1px);
+}
+
+
+/* MEDDELANDEN */
+
+.messageboard-list {
+  background: rgba(10, 10, 10, 0.92);
+
+  border-left: 4px solid #d4a017;
+  border-radius: 0 14px 14px 0;
+
+  padding: 28px;
+
+  margin-top: 24px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.messageboard-list > p {
+  margin: 0;
+
+  color: #cccccc;
 }
 
 .message {
   background: #080808;
 
   border: 1px solid rgba(212, 160, 23, 0.25);
-  border-radius: 10px;
+  border-radius: 12px;
 
-  padding: 20px;
+  padding: 22px;
 
-  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.message:last-child {
+  margin-bottom: 0;
 }
 
 .message .name {
@@ -539,17 +579,94 @@ footer address {
   color: #f7c948;
 
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .message p {
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  line-height: 1.6;
 }
 
 .message .date {
+  margin-bottom: 0;
+
   color: #777777;
 
   font-size: 0.85rem;
+}
 
+
+/* DELTAGARLISTA */
+
+.participants-list {
+  padding-left: 0;
+
+  margin-top: 18px;
   margin-bottom: 0;
+
+  list-style: none;
+}
+
+.participants-list li {
+  background: rgba(8, 8, 8, 0.85);
+
+  border: 1px solid rgba(212, 160, 23, 0.22);
+  border-radius: 10px;
+
+  padding: 14px 16px;
+
+  margin-bottom: 12px;
+}
+
+.participants-list li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* LITE EXTRA FÖR ANSLAGSTAVLAN */
+
+#messageboard p,
+#messages-section p,
+#participants p,
+#privacy p {
+  line-height: 1.7;
+}
+
+#messages-section {
+  margin-top: 40px;
+}
+
+#participants {
+  margin-top: 40px;
+}
+
+#privacy {
+  margin-top: 40px;
+}
+
+
+/* MOBILANPASSNING */
+
+@media (max-width: 700px) {
+
+  .messageboard-form,
+  .messageboard-list {
+    padding: 22px;
+
+    border-left: none;
+    border-top: 4px solid #d4a017;
+
+    border-radius: 0 0 14px 14px;
+  }
+
+  .message {
+    padding: 18px;
+  }
+
+  .messageboard-form button {
+    padding: 14px 18px;
+  }
+
 }

@@ -1,82 +1,118 @@
+<!-- Slutlig svensk anslagstavla för Racemakers. -->
 <!DOCTYPE html>
+
 <html lang="sv">
 
 <head>
+
+  <!-- Grundläggande sidinformation -->
   <meta charset="UTF-8">
-  <meta name="color-scheme" content="dark">
+
+  <!-- Gör sidan bra på mobil och surfplatta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Deltagare & Messageboard | Racemakers</title>
+  <!-- Sidan är designad för mörkt tema -->
+  <meta name="color-scheme" content="dark">
 
+  <!-- Titel i webbläsarfliken -->
+  <title>Anslagstavla | Racemakers</title>
+
+  <!-- Sökmotorbeskrivning -->
   <meta
     name="description"
-    content="Offentlig deltagarlista och messageboard för Racemakers sprinttävling i Skövde."
+    content="Anslagstavla och offentlig deltagarlista för Racemakers sprinttävling i Skövde."
   >
 
+  <!-- Sökord -->
+  <meta
+    name="keywords"
+    content="Racemakers, anslagstavla, deltagare, sprint race, tidtagning, Skövde, Käpplunda, community event"
+  >
+
+  <!-- Sidans skapare -->
+  <meta name="author" content="Racemakers">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;500&display=swap"
     rel="stylesheet"
   >
+
 </head>
 
 <body>
 
+  <!-- Toppbanner -->
   <img
     class="flames-banner"
     src="banner.webp"
-    alt="Racemakers eld-banner"
+    alt="Racemakers eventbanner med eld"
   >
 
-  <header id="top">
-    <h1>Deltagare & Messageboard</h1>
 
-    <p>
-      Se offentliga deltagarnamn och skriv ett meddelande till Racemakers-communityn.
-    </p>
+  <!-- HERO / HEADER -->
+  <header id="top">
+
+    <h1>Anslagstavla</h1>
+
+
   </header>
 
+
+  <!-- HUVUDINNEHÅLL -->
   <main>
 
-    <section class="event-section" id="participants">
-      <h2>Deltagarlista</h2>
+    <!-- BRA ATT VETA -->
+    <section id="about" class="event-section">
+
+      <h2>Bra att veta</h2>
 
       <p>
-        Endast det offentliga namn som valdes vid anmälan visas här.
-        E-postadresser och privata meddelanden publiceras inte.
+        Här kan deltagare skriva meddelanden, ställa frågor
+        eller lämna en kommentar till Racemakers-communityn.
       </p>
-
-      <div class="rules-box">
-        <ul class="participants-list">
-          <li>Inga offentliga deltagare har lagts till ännu.</li>
-        </ul>
-      </div>
 
       <p>
-        Deltagarnamn uppdateras manuellt efter att anmälan har godkänts.
+        Anslagstavlan är offentlig. Skriv därför inte telefonnummer,
+        e-postadresser, adresser eller annan privat information.
       </p>
+
+      <p>
+        Deltagarlistan visar endast namn eller smeknamn som personer
+        själva valt att visa offentligt.
+      </p>
+
     </section>
 
-    <section class="event-section" id="messageboard">
-      <h2>Messageboard</h2>
+
+    <!-- ANSLAGSTAVLA -->
+    <section id="messageboard" class="event-section">
+
+      <h2>Skriv meddelande</h2>
 
       <p>
-        Skriv ett meddelande, en fråga eller en kommentar.
+        Skriv ett kort meddelande, en fråga eller en kommentar.
       </p>
 
       <div class="messageboard-form">
 
-        <label for="name">Namn</label>
+        <label for="name">
+          Namn
+        </label>
 
         <input
           type="text"
           id="name"
-          placeholder="Skriv ditt namn"
+          placeholder="Skriv ditt namn eller smeknamn"
           maxlength="40"
         >
 
-        <label for="message">Meddelande</label>
+        <label for="message">
+          Meddelande
+        </label>
 
         <textarea
           id="message"
@@ -89,37 +125,74 @@
         </button>
 
       </div>
+
     </section>
 
-    <section class="event-section">
+
+    <!-- MEDDELANDEN -->
+    <section id="messages-section" class="event-section">
+
       <h2>Meddelanden</h2>
 
-      <div id="messages" class="messageboard-list"></div>
+      <p>
+        Här visas de senaste meddelandena från anslagstavlan.
+      </p>
+
+      <div
+        id="messages"
+        class="messageboard-list"
+      >
+        <p>
+          Laddar meddelanden...
+        </p>
+      </div>
+
     </section>
 
-    <section class="event-section" id="privacy">
+
+    <!-- DELTAGARE -->
+    <section id="participants" class="event-section">
+
+      <h2>Deltagare</h2>
+
+      <p>
+        Här visas offentliga deltagarnamn efter att anmälan har godkänts.
+      </p>
+
+      <div class="rules-box">
+
+        <ul class="participants-list">
+          <li>Inga offentliga deltagare har lagts till ännu.</li>
+        </ul>
+
+      </div>
+
+      <p>
+        Deltagarnamn uppdateras manuellt.
+      </p>
+
+    </section>
+
+
+    <!-- INTEGRITET -->
+    <section id="privacy" class="event-section">
+
       <h2>Integritet</h2>
 
       <p>
-        För att skydda integriteten visas endast det namn eller smeknamn
-        som personen själv valt att göra offentligt.
+        För att skydda deltagarnas integritet visas inte e-postadresser,
+        privata meddelanden eller annan känslig information.
       </p>
 
       <p>
-        Skriv inte privata uppgifter, telefonnummer eller känslig information
-        i messageboarden.
+        Skriv bara sådan information som du själv tycker är okej att visa
+        offentligt på sidan.
       </p>
-    </section>
 
-    <section class="event-section">
-      <p>
-        <a href="signup.html" class="map-button">
-          Gå till anmälningssidan
-        </a>
-      </p>
     </section>
 
   </main>
+
 
   <!-- NAVIGATION -->
 <nav>
@@ -127,11 +200,11 @@
 
     <li><a href="/">Hem</a></li>
 
+    <li><a href="/#location">Plats</a></li>
+
     <li><a href="/#course">Banan</a></li>
 
     <li><a href="/#rules">Regler</a></li>
-
-    <li><a href="/#location">Plats</a></li>
 
     <li><a href="/anmalan/">Anmälan</a></li>
 
@@ -144,7 +217,10 @@
   </ul>
 </nav>
 
+
+  <!-- FOOTER -->
   <footer>
+
     <address>
       Kontakt:
       <a href="mailto:racemakers@modul.slmail.me">
@@ -152,11 +228,10 @@
       </a>
     </address>
 
-    <p>
-      Racemakers Community Project
-    </p>
   </footer>
 
+
+  <!-- SUPABASE MESSAGEBOARD -->
   <script type="module">
 
     import { createClient }
