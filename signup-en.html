@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 
 <head>
 
-  <!-- Grundläggande sidinformation -->
+  <!-- Basic page information -->
   <meta charset="UTF-8">
 
-  <!-- Mobilanpassning -->
+  <!-- Mobile scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Stöd för mörkt läge -->
+  <!-- Dark mode support -->
   <meta name="color-scheme" content="dark">
 
-  <!-- Titel i webbläsarfliken -->
-  <title>Anmälan | Racemakers</title>
+  <!-- Browser tab title -->
+  <title>Signup | Racemakers</title>
 
-  <!-- SEO-beskrivning -->
+  <!-- SEO description -->
   <meta
     name="description"
-    content="Anmäl dig till Racemakers sprinttävling i Skövde."
+    content="Sign up for the Racemakers sprint race event in Skövde."
   >
 
   <!-- CSS -->
@@ -34,23 +34,21 @@
 
 <body>
 
-  <!-- Toppbanner -->
+  <!-- Top banner -->
   <img
     class="flames-banner"
     src="banner.webp"
-    alt="Racemakers eld-banner"
+    alt="Racemakers flames banner"
   >
-
-
 
 
   <!-- MAIN -->
   <main>
 
-    <!-- ANMÄLNINGSSEKTION -->
+    <!-- SIGNUP SECTION -->
     <section class="event-section">
 
-      <h2>Anmälan</h2>
+      <h2>Sign up</h2>
 
       <!-- WEB3FORMS -->
       <form
@@ -66,21 +64,21 @@
           value="98e4fe18-87f1-4d96-8748-3ef54183e740"
         >
 
-        <!-- Omdirigering efter lyckad anmälan -->
+        <!-- Redirect after successful signup -->
         <input
           type="hidden"
           name="redirect"
-          value="https://racemakers.se/success-sv.html"
+          value="https://racemakers.se/success.html"
         >
 
-        <!-- Valfritt e-postämne -->
+        <!-- Optional email subject -->
         <input
           type="hidden"
           name="subject"
-          value="Ny Racemakers-anmälan"
+          value="New Racemakers Signup"
         >
 
-        <!-- Anti-spam -->
+        <!-- Anti spam -->
         <input
           type="checkbox"
           name="botcheck"
@@ -89,11 +87,11 @@
         >
 
 
-        <!-- NAMN -->
+        <!-- NAME -->
         <div class="form-field">
 
           <label for="name">
-            Namn:
+            Name:
           </label>
 
           <input
@@ -106,11 +104,11 @@
         </div>
 
 
-        <!-- E-POST -->
+        <!-- EMAIL -->
         <div class="form-field">
 
           <label for="email">
-            E-post:
+            Email:
           </label>
 
           <input
@@ -123,11 +121,11 @@
         </div>
 
 
-        <!-- MEDDELANDE -->
+        <!-- MESSAGE -->
         <div class="form-field">
 
           <label for="message">
-            Meddelande:
+            Message:
           </label>
 
           <textarea
@@ -139,23 +137,23 @@
         </div>
 
 
-        <!-- OFFENTLIGT NAMN -->
+        <!-- PUBLIC NAME -->
         <div class="form-field">
 
           <label for="public-name">
-            Offentligt deltagarnamn:
+            Public participant name:
           </label>
 
           <input
             type="text"
             id="public-name"
             name="public-name"
-            placeholder="Riktigt namn eller smeknamn"
+            placeholder="Real name or nickname"
             required
           >
 
           <small>
-            Detta namn kan visas offentligt på deltagarsidan.
+            This name may be shown publicly on the participants page.
           </small>
 
         </div>
@@ -172,15 +170,15 @@
               required
             >
 
-            Jag godkänner att Racemakers får lagra min inskickade information
-            för att hantera evenemangsanmälan.
+            I agree that Racemakers may store my submitted information
+            to manage the event registration.
 
           </label>
 
         </div>
 
 
-        <!-- ANSVARSFRISKRIVNING -->
+        <!-- LIABILITY WAIVER -->
         <div class="form-field">
 
           <label>
@@ -191,20 +189,20 @@
               required
             >
 
-            Jag förstår att deltagande sker på egen risk.
-            Racemakers och arrangörerna kan inte hållas ansvariga
-            för skador, olyckor, förlust eller andra problem under evenemanget.
+            I understand that participation is at my own risk.
+            Racemakers and the event organizers cannot be held responsible
+            for injuries, accidents, damage, or loss during the event.
 
           </label>
 
         </div>
 
 
-        <!-- SKICKA-KNAPP -->
+        <!-- SUBMIT BUTTON -->
         <div class="form-actions">
 
           <button type="submit">
-            Skicka
+            Submit
           </button>
 
         </div>
@@ -214,21 +212,21 @@
     </section>
 
 
-    <!-- INTEGRITET -->
+    <!-- PRIVACY -->
     <section class="event-section">
 
-      <h2>Integritet</h2>
+      <h2>Privacy</h2>
 
       <p>
-        Informationen du skickar in används endast för att hantera denna anmälan.
+        The information you submit is only used to manage this event registration.
       </p>
 
       <p>
-        Vi säljer eller delar inte din information med tredje part.
+        We do not sell or share your information with third parties.
       </p>
 
       <p>
-        Endast det offentliga deltagarnamnet eller smeknamnet kan visas offentligt.
+        Only the public participant name or nickname may be shown publicly.
       </p>
 
     </section>
@@ -240,21 +238,22 @@
   <nav>
 
     <ul>
-      <li><a href="index-sv.html">Hem</a></li>
+        <li><a href="index.html">Home</a></li>
 
 
+      <li><a href="index.html#course">Course</a></li>
 
-      <li><a href="index-sv.html#course">Banan</a></li>
+      <li><a href="index.html#rules">Rules</a></li>
 
-      <li><a href="index-sv.html#rules">Regler</a></li>
+      <li><a href="index.html#location">Location</a></li>
 
-      <li><a href="index-sv.html#location">Plats</a></li>
+      <li><a href="signup.html">Sign up</a></li>
 
-      <li><a href="participants-sv.html">Deltagare</a></li>
+      <li><a href="participants.html">Participants</a></li>
 
-      <li><a href="racemakers-sv.html">Racemakers</a></li>
+      <li><a href="racemakers.html">Racemakers</a></li>
 
-      <li><a href="signup.html">🇬🇧 English</a></li>
+      <li><a href="signup-sv.html">🇸🇪 Svenska</a></li>
 
     </ul>
 
@@ -265,14 +264,14 @@
   <footer>
 
     <address>
-      Kontakt:
+      Contact:
       <a href="mailto:racemakers@modul.slmail.me">
         racemakers@modul.slmail.me
       </a>
     </address>
 
     <p>
-      Snabbaste tiden vinner äran.
+      Fastest time wins the honor.
     </p>
 
   </footer>
