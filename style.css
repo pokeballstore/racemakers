@@ -441,3 +441,115 @@ footer address {
     padding-bottom: 80px;
   }
 }
+
+/* MESSAGEBOARD */
+
+.messageboard-form,
+.messageboard-list {
+  background: rgba(15, 15, 15, 0.92);
+
+  border-left: 4px solid #d4a017;
+
+  border-radius: 0 12px 12px 0;
+
+  padding: 28px;
+
+  margin-top: 28px;
+}
+
+.messageboard-form label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ffffff;
+}
+
+.messageboard-form input,
+.messageboard-form textarea {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 22px;
+
+  background: #080808;
+  color: #ffffff;
+
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  border-radius: 10px;
+
+  font: inherit;
+}
+
+.messageboard-form input:focus,
+.messageboard-form textarea:focus {
+  outline: none;
+
+  border-color: #f7c948;
+
+  box-shadow: 0 0 10px rgba(212, 160, 23, 0.15);
+}
+
+.messageboard-form textarea {
+  min-height: 140px;
+
+  resize: vertical;
+}
+
+.messageboard-form button {
+  width: 100%;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  border: 1px solid #d4a017;
+  border-radius: 8px;
+
+  padding: 12px 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.messageboard-form button:hover {
+  background: rgba(212, 160, 23, 0.14);
+}
+
+.message {
+  background: #080808;
+
+  border: 1px solid rgba(212, 160, 23, 0.25);
+  border-radius: 10px;
+
+  padding: 20px;
+
+  margin-top: 18px;
+}
+
+.message .name {
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  color: #f7c948;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+}
+
+.message p {
+  margin-bottom: 10px;
+}
+
+.message .date {
+  color: #777777;
+
+  font-size: 0.85rem;
+
+  margin-bottom: 0;
+}
