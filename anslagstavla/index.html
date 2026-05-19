@@ -3,16 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-
+  <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="color-scheme" content="dark">
-
-  <title>Messageboard | Racemakers</title>
+  <title>Deltagare & Messageboard | Racemakers</title>
 
   <meta
     name="description"
-    content="Racemakers messageboard för lokala meddelanden, frågor och kommentarer."
+    content="Offentlig deltagarlista och messageboard för Racemakers sprinttävling i Skövde."
   >
 
   <link rel="stylesheet" href="style.css">
@@ -26,22 +24,46 @@
 <body>
 
   <img
-    src="images/flames-banner.png"
-    alt="Racemakers flames banner"
     class="flames-banner"
+    src="banner.webp"
+    alt="Racemakers eld-banner"
   >
 
-  <header>
-    <h1>Messageboard</h1>
+  <header id="top">
+    <h1>Deltagare & Messageboard</h1>
 
     <p>
-      Skriv ett meddelande till Racemakers-communityn.
+      Se offentliga deltagarnamn och skriv ett meddelande till Racemakers-communityn.
     </p>
   </header>
 
   <main>
 
-    <section class="event-section">
+    <section class="event-section" id="participants">
+      <h2>Deltagarlista</h2>
+
+      <p>
+        Endast det offentliga namn som valdes vid anmälan visas här.
+        E-postadresser och privata meddelanden publiceras inte.
+      </p>
+
+      <div class="rules-box">
+        <ul class="participants-list">
+          <li>Inga offentliga deltagare har lagts till ännu.</li>
+        </ul>
+      </div>
+
+      <p>
+        Deltagarnamn uppdateras manuellt efter att anmälan har godkänts.
+      </p>
+    </section>
+
+    <section class="event-section" id="messageboard">
+      <h2>Messageboard</h2>
+
+      <p>
+        Skriv ett meddelande, en fråga eller en kommentar.
+      </p>
 
       <div class="messageboard-form">
 
@@ -67,34 +89,73 @@
         </button>
 
       </div>
-
     </section>
 
     <section class="event-section">
-
       <h2>Meddelanden</h2>
 
       <div id="messages" class="messageboard-list"></div>
+    </section>
 
+    <section class="event-section" id="privacy">
+      <h2>Integritet</h2>
+
+      <p>
+        För att skydda integriteten visas endast det namn eller smeknamn
+        som personen själv valt att göra offentligt.
+      </p>
+
+      <p>
+        Skriv inte privata uppgifter, telefonnummer eller känslig information
+        i messageboarden.
+      </p>
+    </section>
+
+    <section class="event-section">
+      <p>
+        <a href="signup.html" class="map-button">
+          Gå till anmälningssidan
+        </a>
+      </p>
     </section>
 
   </main>
 
+  <!-- NAVIGATION -->
+<nav>
+  <ul>
+
+    <li><a href="/">Hem</a></li>
+
+    <li><a href="/#course">Banan</a></li>
+
+    <li><a href="/#rules">Regler</a></li>
+
+    <li><a href="/#location">Plats</a></li>
+
+    <li><a href="/anmalan/">Anmälan</a></li>
+
+    <li><a href="/anslagstavla/">Anslagstavla</a></li>
+
+    <li><a href="/om-racemakers/">Om Racemakers</a></li>
+
+    <li><a href="/en/messageboard/">🇬🇧 English</a></li>
+
+  </ul>
+</nav>
+
   <footer>
+    <address>
+      Kontakt:
+      <a href="mailto:racemakers@modul.slmail.me">
+        racemakers@modul.slmail.me
+      </a>
+    </address>
+
     <p>
-      Racemakers
+      Racemakers Community Project
     </p>
   </footer>
-
-  <nav>
-    <ul>
-      <li><a href="index.html">Hem</a></li>
-      <li><a href="index.html#location">Plats</a></li>
-      <li><a href="signup.html">Anmälan</a></li>
-      <li><a href="participants.html">Deltagare</a></li>
-      <li><a href="messageboard.html">Messageboard</a></li>
-    </ul>
-  </nav>
 
   <script type="module">
 
@@ -130,12 +191,12 @@
       container.innerHTML = ''
 
       if (error) {
-        container.innerHTML = '<p>Could not load messages.</p>'
+        container.innerHTML = '<p>Kunde inte ladda meddelanden.</p>'
         return
       }
 
       if (data.length === 0) {
-        container.innerHTML = '<p>No messages yet.</p>'
+        container.innerHTML = '<p>Inga meddelanden ännu.</p>'
         return
       }
 
